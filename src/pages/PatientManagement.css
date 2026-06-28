@@ -1,0 +1,395 @@
+.patient-page {
+  padding: 10px 15px;
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.patient-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.add-patient-btn {
+  background: #0383c7;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  /* margin-top: 20px; */
+  font-size: 14px;
+}
+
+.patient-table-container {
+  background: #fdfdfd;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+}
+
+.patient-table {
+  width: 100%;
+  border-radius: 20px;
+  border-collapse: collapse;
+}
+
+.patient-table thead {
+  background: white;
+}
+
+.patient-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.patient-table td {
+  padding: 15px 16px;
+  border-top: 1px solid #ececec;
+  font-size: 13px;
+  color: #555;
+}
+
+.status-active {
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.action-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.view {
+  color: #0383c7;
+  cursor: pointer;
+}
+
+.edit {
+  color: #0383c7;
+  cursor: pointer;
+}
+
+.delete {
+  color: #ff4d4f;
+  cursor: pointer;
+}
+
+.patient-table tbody tr:hover {
+  background: #fafafa;
+}
+.patient-table-wrapper{
+    background-color: white;
+    margin-top: -30px;
+}
+.edit-icon{
+    margin-right: 10px;
+    color: #0383C7;
+}
+.delete-icon{
+    color:red;
+}
+/* ==========================
+   UPDATE VISIT MODAL
+========================== */
+
+.visit-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
+
+  /* Dark Blue Blur Theme */
+  background: rgba(10, 32, 55, 0.55);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.visit-modal {
+  width: 340px;
+
+  background: #ffffff;
+
+  border-radius: 15px;
+
+  padding: 18px;
+
+  position: relative;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  animation: visitPopup 0.25s ease;
+}
+
+@keyframes visitPopup {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.visit-modal h3 {
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #333;
+
+  margin-bottom: 15px;
+}
+
+.visit-modal label {
+  display: block;
+
+  font-size: 11px;
+  color: #666;
+
+  margin-bottom: 5px;
+}
+
+.visit-modal input {
+  width: 100%;
+  height: 38px;
+
+  border: 1.5px solid #8bc7e6;
+  border-radius: 20px;
+
+  padding: 0 14px;
+
+  outline: none;
+}
+
+.visit-modal input:focus {
+  border-color: #0383c7;
+}
+
+.visit-update-btn {
+  width: 100%;
+  height: 38px;
+
+  margin-top: 14px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #0383c7;
+
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.visit-close-btn {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 24px;
+  height: 24px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #0383c7;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ==========================
+   DARK THEME WHEN MODAL OPEN
+========================== */
+
+/* .modal-active .sidebar {
+  background: linear-gradient(
+    to bottom,
+    #0b2740,
+    #123a59,
+    #0b2740
+  ) !important;
+
+  transition: 0.3s ease;
+} */
+
+/* .modal-active .navbar {
+  background: #D9D9D9 !important;
+  transition: 0.3s ease;
+} */
+
+/* .modal-active .main-content {
+  background: #173d5c;
+  transition: 0.3s ease;
+} */
+
+/* .modal-active .menu a {
+  color: white !important;
+} */
+
+/* .modal-active .menu a.active {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.modal-active .admin-profile h5,
+.modal-active .admin-profile p {
+  color: white !important;
+} */
+
+/* .modal-active .search-box {
+  background: #37485696 !important;
+} */
+
+/* .modal-active .search-box svg {
+  color: white !important;
+}
+
+.modal-active .search-box input {
+  color: white !important;
+}
+
+.modal-active .logout-btn {
+  background: white !important;
+  color: #0b2740 !important;
+  font-weight: 600;
+} */
+
+/* Add Patient Button Dark Blue */
+
+.modal-active .patient-btn {
+  background: #0b2740 !important;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.modal-active .search-box input::placeholder {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+.modal-active .patient-table-wrapper {
+  opacity: 0.6;
+}
+
+.modal-active h2 {
+  color: white !important;
+}
+.patient-title{
+  color:#222;
+  margin-top:-25px;
+}
+
+.modal-active .patient-title{
+  color:white !important;
+}
+
+/* ==========================
+   DELETE MODAL
+========================== */
+
+.delete-modal {
+  width: 330px;
+  background: #fff;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  position: relative;
+
+  text-align: center;
+
+  animation: visitPopup 0.25s ease;
+}
+
+.delete-icon-circle {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  background: #ff4d4f;
+  color: white;
+
+  font-size: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-modal h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.delete-modal p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+.delete-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.delete-cancel-btn {
+  width: 90px;
+  height: 36px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 20px;
+
+  background: white;
+  cursor: pointer;
+}
+
+.delete-confirm-btn {
+  width: 90px;
+  height: 36px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #0383c7;
+  color: white;
+
+  cursor: pointer;
+}
+
+.patient-row {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.patient-row:hover {
+  background: #f3f8fc !important;
+}

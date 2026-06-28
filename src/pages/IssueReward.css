@@ -1,0 +1,165 @@
+.reward-wrapper{
+  width:420px;
+}
+
+.reward-card{
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:12px;
+  padding:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.reward-progress h4{
+  font-size:14px;
+  color:#374856;
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.reward-item{
+  font-size:11px;
+  color:#5b6570;
+  margin-bottom:8px;
+}
+
+.reward-summary{
+  margin-top:14px;
+  font-size:12px;
+  color:#374856;
+  font-weight:600;
+}
+
+.gift-circle{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:#3f5162;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-shrink:0;
+}
+
+.gift-circle svg{
+  color:#fff;
+  font-size:34px;
+}
+
+.patient-code-section{
+  margin-top:14px;
+}
+
+.patient-code-section label{
+  display:block;
+  margin-bottom:8px;
+  font-size:13px;
+  font-weight:600;
+  color:#374856;
+}
+
+.patient-code-box{
+  width:230px;
+  height:36px;
+  background:#ececec;
+  border-radius:6px;
+  padding:0 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#374856;
+  font-size:12px;
+}
+
+.referral-section{
+  margin-top:18px;
+}
+
+.referral-section label{
+  display:block;
+  margin-bottom:12px;
+  font-size:13px;
+  font-weight:600;
+  color:#374856;
+}
+
+.referral-users{
+  display:flex;
+  gap:26px;
+}
+
+.user-icon{
+  position:relative;
+}
+
+.user-icon svg{
+  font-size:42px;
+  color:#3f5162;
+}
+.user-icon2{
+  position:relative;
+}
+
+.user-icon2 svg{
+  font-size:62px;
+  margin-top:-10px;
+  color:#3f5162;
+}
+.user-icon3{
+  position:relative;
+}
+
+.user-icon3 svg{
+  font-size:42px;
+  /* margin-top:-5px; */
+  color:#3f5162;
+}
+
+.check-badge{
+  position:absolute;
+  right:-2px;
+  top:-2px;
+  width:14px;
+  height:14px;
+  background:#f1f1f1;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:9px;
+  color:#5f6770;
+  border:1px solid #d8d8d8;
+}
+
+.referral-user{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.referral-user span{
+  margin-top:6px;
+  font-size:11px;
+  color:#374856;
+}
+
+.referral-user small{
+  font-size:10px;
+  color:#6f7780;
+  margin-top:2px;
+}
+
+.issue-btn{
+  display:block;
+  margin:28px auto 0;
+  width:175px;
+  height:34px;
+  border:none;
+  border-radius:25px;
+  background:#0383C7;
+  color:#fff;
+  font-size:12px;
+  cursor:pointer;
+}

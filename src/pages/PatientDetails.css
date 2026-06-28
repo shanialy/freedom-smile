@@ -1,0 +1,414 @@
+.details-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.details-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.details-title h2{
+  font-size:22px;
+  color:#374856;
+}
+
+.back-icon{
+  font-size:13px;
+  color:#8d8d8d;
+  cursor:pointer;
+  border: 1px solid rgba(128, 128, 128, 0.315);
+  box-shadow: 0px 0px 0px 2px rgba(128, 128, 128, 0.253);
+  border-radius:5px;
+  padding:2px;
+  width:18px;
+  height:18px;
+}
+
+.details-actions{
+  display:flex;
+  gap:10px;
+}
+
+.reward-btn{
+  border:none;
+  background:#374856;
+  color:white;
+  padding:8px 16px;
+  border-radius:8px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.notification-btn{
+  border:none;
+  background:#0383C7;
+  color:white;
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.details-content{
+  display:flex;
+  gap:15px;
+}
+
+.patient-info-card{
+  width:300px;
+  background:white;
+  border-radius:10px;
+  border:1px solid #e5e5e5;
+  padding:18px;
+}
+
+.patient-avatar{
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.patient-avatar svg{
+  font-size:60px;
+  color:#4b5968;
+}
+
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #f0f0f0;
+  padding:10px 0;
+}
+
+.info-row span:first-child{
+  color:#666;
+  font-size:11px;
+}
+
+.info-row span:last-child{
+  color:#374856;
+  font-size:11px;
+  font-weight:500;
+}
+
+.patient-card-actions{
+  margin-top:18px;
+  display:flex;
+  gap:8px;
+}
+
+.delete-patient-btn{
+  flex:1;
+  height:35px;
+  border:none;
+  border-radius:20px;
+  background:#0383C7;
+  color:white;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.edit-patient-btn{
+  width:35px;
+  height:35px;
+  border:1px solid #a1a1a1;
+  border-radius:8px;
+  background:#37485648;
+  cursor:pointer;
+}
+
+.appointment-history{
+  flex:1;
+}
+
+.appointment-history h3{
+  font-size:14px;
+  color:#374856;
+  margin-bottom:10px;
+}
+
+.history-table-box{
+  background:white;
+  border-radius:10px;
+  border:1px solid #e5e5e5;
+  padding:15px;
+}
+
+.history-table-box h4{
+  font-size:13px;
+  color:#374856;
+  margin-bottom:10px;
+}
+
+.history-table-box table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.history-table-box th{
+  text-align:left;
+  font-size:11px;
+  color:#666;
+  padding:10px;
+}
+
+.history-table-box td{
+  padding:10px;
+  font-size:11px;
+  color:#374856;
+}
+
+.paid-status{
+  background:#374856;
+  color:white;
+  padding:3px 10px;
+  border-radius:8px;
+  font-size:10px;
+}
+
+/* Only Patient Details Page Sidebar */
+
+/* .patient-details-page .sidebar {
+  background: #374856 !important;
+} */
+/* .patient-details-page .navbar {
+  background: #6b6f727c !important;
+}
+
+.patient-details-page .menu a {
+  color: white !important;
+}
+
+.patient-details-page .menu a.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.patient-details-page .logout-btn {
+  background: white !important;
+  color: #374856 !important;
+  font-weight: 600;
+}
+
+.patient-details-page .logo {
+  background: transparent;
+} */
+
+/* DELETE MODAL */
+
+.delete-modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(20,30,40,.18);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.delete-modal{
+  width:310px;
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.close-modal-btn{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:22px;
+  height:22px;
+  border:none;
+  border-radius:50%;
+  background:#0383C7;
+  color:#fff;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+}
+
+.delete-icon-circle{
+  width:56px;
+  height:56px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:#eeeeee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.delete-icon-circle svg{
+  font-size:22px;
+  color:#4b5968;
+}
+
+.delete-modal h3{
+  font-size:14px;
+  color:#374856;
+  margin-bottom:8px;
+}
+
+.delete-modal p{
+  font-size:11px;
+  color:#777;
+  margin-bottom:16px;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.modal-no-btn{
+  width:90px;
+  height:30px;
+  border:1px solid #cfcfcf;
+  background:#fff;
+  border-radius:8px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.modal-yes-btn{
+  width:90px;
+  height:30px;
+  border:none;
+  background:#0383C7;
+  color:white;
+  border-radius:15px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+/* EDIT PATIENT MODAL */
+
+.edit-patient-modal{
+  width:300px;
+  background:#fff;
+  border-radius:14px;
+  padding:18px;
+  position:relative;
+}
+
+.edit-patient-modal h3{
+  text-align:center;
+  font-size:13px;
+  color:#374856;
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.edit-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.edit-form label{
+  font-size:10px;
+  color:#6b7280;
+  margin-bottom:4px;
+  margin-top:8px;
+}
+
+.edit-form input,
+.edit-form select{
+  width:100%;
+  height:28px;
+  border:1px solid #73b9e5;
+  border-radius:20px;
+  padding:0 12px;
+  font-size:10px;
+  outline:none;
+  background:#f7fbfe;
+}
+
+.edit-form h4{
+  font-size:11px;
+  color:#374856;
+  margin-top:12px;
+  margin-bottom:4px;
+  font-weight:600;
+}
+
+.save-patient-btn{
+  width:100%;
+  height:30px;
+  border:none;
+  border-radius:20px;
+  background:#0383C7;
+  color:#fff;
+  font-size:11px;
+  cursor:pointer;
+  margin:18px auto 0;
+  display:block;
+}
+
+/* NOTIFICATION MODAL */
+
+.notification-modal{
+  width:320px;
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  position:relative;
+}
+
+.notification-modal h3{
+  text-align:center;
+  font-size:12px;
+  color:#374856;
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.notification-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.notification-form label{
+  font-size:10px;
+  color:#7a7a7a;
+  margin-bottom:5px;
+}
+
+.notification-form textarea{
+  width:100%;
+  height:120px;
+  resize:none;
+  border:1px solid #73b9e5;
+  border-radius:10px;
+  padding:10px;
+  outline:none;
+  font-size:10px;
+  background:#f8fcff;
+}
+
+.notification-form textarea::placeholder{
+  color:#b0b0b0;
+}
+
+.add-notification-btn{
+  width:100%;
+  height:30px;
+  margin-top:10px;
+  border:none;
+  border-radius:20px;
+  background:#0383C7;
+  color:#fff;
+  font-size:11px;
+  cursor:pointer;
+}

@@ -1,0 +1,60 @@
+.report-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #374856;
+  margin-bottom: 15px;
+}
+
+.report-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 18px;
+  border: 1px solid rgba(128, 128, 128, 0.164);
+  min-height: 120px;
+}
+
+.report-form {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.report-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-field label {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.report-field select,
+.report-field input {
+  height: 32px;
+  border: 1px solid #bfc7cf;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 11px;
+  color: #666;
+  outline: none;
+  background: #f7f7f7;
+}
+
+.export-btn {
+  margin-top: 18px;
+  /* background: #374856; */
+  background: #0383c7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.export-btn:hover {
+  background: #0272ad;
+}

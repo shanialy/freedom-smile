@@ -1,0 +1,170 @@
+.tip-detail-container {
+  background: transparent;
+}
+
+.tip-detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374856;
+  margin-bottom: 12px;
+}
+
+.tip-image-box {
+  width: 100%;
+  max-width: 700px;
+  height: 220px;
+
+  background: #3d4f60;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 42px;
+
+  margin-bottom: 16px;
+}
+
+.tip-detail-text {
+  max-width: 700px;
+
+  color: #6e7882;
+  font-size: 11px;
+  line-height: 1.7;
+
+  text-align: justify;
+}
+
+.tip-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.edit-btn {
+  width: 80px;
+  height: 34px;
+
+  border-radius: 4px;
+  border: 1px solid #b9c1c8;
+
+  background: transparent;
+  color: #374856;
+
+  cursor: pointer;
+}
+
+.delete-btn {
+  width: 80px;
+  height: 34px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #374856;
+  color: white;
+
+  cursor: pointer;
+}
+
+/* Overlay */
+
+.delete-modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(6px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+/* Modal */
+
+.delete-modal{
+  width:320px;
+  background:#fff;
+  border-radius:12px;
+  padding:24px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Close Button */
+
+.modal-close-btn{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:20px;
+  height:20px;
+  border:none;
+  border-radius:50%;
+  background:#0B84D8;
+  color:#fff;
+  font-size:12px;
+  cursor:pointer;
+}
+
+/* Trash Circle */
+
+.delete-icon-circle{
+  width:60px;
+  height:60px;
+  margin:0 auto 14px;
+  border-radius:50%;
+  background:#eeeeee;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:26px;
+  color:#374856;
+}
+
+/* Text */
+
+.delete-modal-title{
+  font-size:16px;
+  font-weight:600;
+  color:#374856;
+  margin-bottom:10px;
+}
+
+.delete-modal-text{
+  font-size:11px;
+  color:#777;
+  margin-bottom:20px;
+}
+
+/* Buttons */
+
+.delete-modal-buttons{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+
+.cancel-btn,
+.confirm-btn{
+  width:90px;
+  height:32px;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.cancel-btn{
+  background:#fff;
+  border:1px solid #cfcfcf;
+  color:#555;
+}
+
+.confirm-btn{
+  border:none;
+  background:#374856;
+  color:#fff;
+}

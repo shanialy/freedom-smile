@@ -1,0 +1,158 @@
+.add-tip-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #374856;
+  margin-bottom: 16px;
+}
+
+.tip-form-card {
+  width: 100%;
+  max-width: 930px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+
+  padding: 22px;
+}
+
+.upload-box {
+  border: none;
+   width: 100%;
+  height: 150px;
+
+  /* border: 4px dashed #c7c7c7; */
+  border-radius: 6px;
+
+  background: #f7f7f7;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  margin-bottom: 18px;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      #c7c7c7 0px,
+      #c7c7c7 12px,
+      transparent 12px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #c7c7c7 0px,
+      #c7c7c7 12px,
+      transparent 12px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #c7c7c7 0px,
+      #c7c7c7 12px,
+      transparent 12px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #c7c7c7 0px,
+      #c7c7c7 12px,
+      transparent 12px,
+      transparent 18px
+    );
+
+  background-size:
+    100% 2px,
+    100% 2px,
+    2px 100%,
+    2px 100%;
+
+  background-position:
+    top,
+    bottom,
+    left,
+    right;
+
+  background-repeat: no-repeat;
+}
+
+.upload-box input {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 20px;
+  color: #6c7680;
+  margin-bottom: 8px;
+}
+
+.upload-box span {
+  font-size: 11px;
+  color: #7d8790;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+
+  font-size: 11px;
+  color: #66727d;
+
+  margin-bottom: 6px;
+}
+
+
+.form-group textarea {
+  width: 100%;
+
+  border: 1px solid #bfc5cb;
+  border-radius: 4px;
+
+  background: #f8f8f8;
+
+  padding: 10px 12px;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+.form-group textarea {
+  resize: none;
+  min-height: 110px;
+}
+
+.publish-btn {
+  background: #374856;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  padding: 8px 26px;
+
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.publish-btn:hover {
+  opacity: 0.9;
+}
+
+.form-group .addNewTipInput{
+  width:100% !important;
+  border: 1px solid rgba(92, 92, 92, 0.452) !important;
+  border-radius:10px !important;
+}

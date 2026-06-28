@@ -1,0 +1,83 @@
+.appointment-page {
+  padding: 5px 10px;
+}
+
+.appointment-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.appointment-card {
+  background: #fff;
+  /* border: 1px solid #e7e7e7; */
+  border-radius: 6px;
+  overflow: hidden;
+}
+hr {
+ width: 95%;
+  /* margin: 15px auto; */
+  border: none;
+   margin:15px auto;
+  height: 1px;
+  background: #dcdcdc;
+}
+
+.appointment-date {
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.appointment-row {
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.appointment-time {
+  width: 90px;
+  font-size: 11px;
+  color: #666;
+}
+
+.appointment-info {
+  flex: 1;
+}
+
+.appointment-info h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.appointment-info p {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.appointment-info span {
+  font-size: 11px;
+  color: #888;
+}
+
+.schedule-btn {
+  background: #ececec;
+  border: none;
+  color: #666;
+  font-size: 11px;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.schedule-btn:hover {
+  background: #e3e3e3;
+}
