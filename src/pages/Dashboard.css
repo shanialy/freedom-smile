@@ -983,3 +983,68 @@ th,td{
 .patient-form input[type="date"]{
   padding-right:14px;
 }
+
+/* Laptop 1024x608 Fix */
+@media (max-width: 1024px) {
+
+  .sidebar{
+    width: 200px;
+  }
+
+  .sidebar-wrapper{
+    width: 200px;
+  }
+
+  .main-content{
+    padding: 15px;
+  }
+
+  .navbar{
+    margin: -15px -15px 20px -15px;
+    padding: 12px 15px;
+  }
+
+  .search-box{
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .admin-profile{
+    margin-right: 0;
+    gap: 8px;
+  }
+
+  .heading-row{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .patient-btn{
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .stats-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .charts{
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-section{
+    grid-template-columns: 1fr;
+  }
+
+  .card{
+    margin-top: 0;
+  }
+
+  .appointments{
+    overflow-x: auto;
+  }
+
+  table{
+    min-width: 700px;
+  }
+}
