@@ -10,7 +10,7 @@ function SetPassword() {
   const navigate = useNavigate();
 
   const handleUpdatePassword = () => {
-    navigate("/dashboard");
+    navigate("/");
   };
 
   return (
