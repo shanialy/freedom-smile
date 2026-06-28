@@ -115,24 +115,48 @@ margin-top: 20px;
   position: relative;
 }
 
-/* EYE BUTTON */
-.eye-btn {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  border: none;
-  background: transparent;
-
-  cursor: pointer;
-  font-size: 20px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+/* PASSWORD WRAPPER */
+.password-wrapper{
+    position:relative !important;
 }
 
-.eye-btn:hover {
-  opacity: 1;
+/* EYE BUTTON */
+.login-eye-btn{
+    position:absolute !important;
+    top:50% !important;
+    right:18px !important;
+
+    transform:translateY(-50%) !important;
+
+    width:32px !important;
+    height:32px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    border:none !important;
+    background:transparent !important;
+    cursor:pointer !important;
+
+    color:#6b7280 !important;
+    font-size:18px !important;
+    padding:0 !important;
+    margin:0 !important;
+    z-index:10 !important;
+
+    transition:0.2s ease !important;
+}
+
+.login-eye-btn:hover{
+    color:#0383C7 !important;
+}
+
+.login-eye-btn svg{
+    display:block !important;
+    width:20px !important;
+    height:20px !important;
+    margin-right: 17px;
 }
 
 /* OPTIONS ROW */
@@ -145,54 +169,76 @@ margin-top: 20px;
   margin-bottom: 25px;
 }
 
-/* REMEMBER ME */
-.remember input {
-  display: none;
+/* LOGIN REMEMBER */
+
+.login-remember-wrap{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:10px !important;
+    cursor:pointer !important;
+    user-select:none !important;
 }
 
-.checkmark {
-  width: 20px !important;
-  height: 20px !important;
-
-  border: 1.5px solid #0383C7 !important;
-  border-radius: 5px;
-
-  background: #7bc4f273;
-
-  display: inline-block;
-  position: relative;
-
-  margin-right: 8px;
-  margin-bottom: -5px;
-  transition: 0.2s ease;
+.login-remember-input{
+    display:none !important;
 }
 
-/* hover/focus feel */
-.remember:hover .checkmark {
-  box-shadow: 0 0 0 3px rgba(2, 136, 216, 0.1);
+.login-custom-checkbox{
+    width:18px !important;
+    height:18px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    position:relative !important;
+
+    background:#7bc4f273 !important;
+    border:1.5px solid #0383C7 !important;
+    border-radius:4px !important;
+
+    flex-shrink:0 !important;
 }
 
-/* checked state */
+.login-custom-checkbox::after{
+    content:"" !important;
+
+    position:absolute !important;
+
+    width:4px !important;
+    height:8px !important;
+
+    border:solid #fff !important;
+    border-width:0 2px 2px 0 !important;
+
+    left:50% !important;
+    top:50% !important;
+
+    transform:translate(-50%,-58%) rotate(45deg) scale(0) !important;
+    transform-origin:center !important;
+}
+
+.login-remember-input:checked + .login-custom-checkbox{
+    background:#0383C7 !important;
+    border-color:#0383C7 !important;
+}
+
+.login-remember-input:checked + .login-custom-checkbox::after{
+    transform:translate(-50%,-58%) rotate(45deg) scale(1) !important;
+}
+
+.login-remember-text{
+    font-size:14px !important;
+    color:#222 !important;
+    font-weight:500 !important;
+}
+/* Checked State */
 .remember input:checked + .checkmark {
   background: #0383C7;
   border-color: #0383C7;
 }
 
-.remember input:checked + .checkmark::after {
-  content: "";
-  position: absolute;
-
-  left: 4px;
-  top: 1px;
-
-  width: 4px;
-  height: 8px;
-
-  border: solid white;
-  border-width: 0 2px 2px 0;
-
-  transform: rotate(45deg);
-}
 
 /* FORGOT PASSWORD */
 .options-row a {

@@ -1,6 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 function Login() {
@@ -38,21 +39,21 @@ function Login() {
             />
 
             <button
-              type="button"
-              className="eye-btn"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              👁
-            </button>
+  type="button"
+  className="login-eye-btn"
+  onClick={() => setShowPassword(!showPassword)}
+>
+  {showPassword ? <FaEye /> : <FaEyeSlash />}
+</button>
           </div>
         </div>
 
         <div className="options-row">
-          <label className="remember">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-            Remember me
-          </label>
+          <label className="login-remember-wrap">
+  <input type="checkbox" className="login-remember-input" />
+  <span className="login-custom-checkbox"></span>
+  <span className="login-remember-text">Remember me</span>
+</label>
 
           <Link to="/ForgotPassword">Forgot Password?</Link>
         </div>
