@@ -6,6 +6,7 @@ import logo from "../assets/logo.png";
 import { FaQuoteLeft, FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import { FaTimes } from "react-icons/fa";
 
 import {
   FaThLarge,
@@ -291,7 +292,7 @@ Our goal is to provide healthcare professionals with a reliable and easy-to-use 
                 className="modal-close-btn"
                 onClick={() => setShowDeleteModal(false)}
               >
-                ×
+                <FaTimes />
               </button>
 
               <div className="delete-icon-circle">
@@ -324,7 +325,7 @@ Our goal is to provide healthcare professionals with a reliable and easy-to-use 
         className="quote-modal-close"
         onClick={() => setShowAddQuoteModal(false)}
       >
-        ×
+        <FaTimes />
       </button>
 
       <h3 className="quote-modal-title">
@@ -357,7 +358,7 @@ Our goal is to provide healthcare professionals with a reliable and easy-to-use 
         className="quote-modal-close"
         onClick={() => setShowEditQuoteModal(false)}
       >
-        ×
+       <FaTimes />
       </button>
 
       <h3 className="quote-modal-title">

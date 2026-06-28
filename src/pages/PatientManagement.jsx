@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 
 import {
   FaUserInjured,
@@ -27,6 +28,7 @@ function PatientManagement() {
   // const [showVisitModal, setShowVisitModal] = useState(false);
   const [showVisitModal, setShowVisitModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showAddPatientModal, setShowAddPatientModal] = useState(false);
   const patients = [
     {
       name: "John Smith",
@@ -105,7 +107,9 @@ function PatientManagement() {
   return (
     <div
       className={`dashboard-container ${
-        showVisitModal || showDeleteModal ? "modal-active" : ""
+        showVisitModal || showDeleteModal || showAddPatientModal
+          ? "modal-active"
+          : ""
       }`}
     >
       {/* Sidebar */}
@@ -141,9 +145,13 @@ function PatientManagement() {
         >
           <h2 className="patient-title">Patients Management</h2>
 
-          <button className="patient-btn" style={{ marginTop: "10px" }}>
-            Add Patient
-          </button>
+          <button
+  className="patient-btn"
+  style={{ marginTop: "10px" }}
+  onClick={() => setShowAddPatientModal(true)}
+>
+  Add Patient
+</button>
         </div>
 
         {/* Table */}
@@ -218,7 +226,7 @@ function PatientManagement() {
                 className="visit-close-btn"
                 onClick={() => setShowVisitModal(false)}
               >
-                ×
+                <FaTimes />
               </button>
 
               <h3>Update Last Visit</h3>
@@ -246,7 +254,7 @@ function PatientManagement() {
                 className="visit-close-btn"
                 onClick={() => setShowDeleteModal(false)}
               >
-                ×
+                <FaTimes />
               </button>
 
               <div className="delete-icon-circle">
@@ -267,6 +275,57 @@ function PatientManagement() {
 
                 <button className="delete-confirm-btn">Yes</button>
               </div>
+            </div>
+          </div>
+        )}
+        {showAddPatientModal && (
+          <div
+            className="pm-add-overlay"
+            onClick={() => setShowAddPatientModal(false)}
+          >
+            <div className="pm-add-modal" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="pm-add-close"
+                onClick={() => setShowAddPatientModal(false)}
+              >
+                <FaTimes />
+              </button>
+
+              <h3>Add New Patient</h3>
+
+              <form className="pm-add-form">
+                <label>Full Name</label>
+                <input type="text" placeholder="Patient Full Name" />
+
+                <label>Mobile Number</label>
+                <input type="text" placeholder="+1 123 456 7890" />
+
+                <label>Gender</label>
+                <select>
+                  <option>Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+
+                <label>Date Of Birth</label>
+                <input type="date" />
+
+                <h4>Clinic & Retainer Details</h4>
+
+                <label>Clinic Location</label>
+                <select>
+                  <option>Select Clinic Location</option>
+                  <option>New York</option>
+                  <option>California</option>
+                </select>
+
+                <label>Retainer Date</label>
+                <input type="date" />
+
+                <button type="submit" className="pm-add-btn">
+                  Add Now
+                </button>
+              </form>
             </div>
           </div>
         )}

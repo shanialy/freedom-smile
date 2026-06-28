@@ -270,11 +270,11 @@ function Messages() {
 
               <div className="msg-header-icons">
 
-                <FaPhoneAlt />
+                {/* <FaPhoneAlt />
 
                 <FaVideo />
 
-                <FaEllipsisV />
+                <FaEllipsisV /> */}
 
               </div>
 

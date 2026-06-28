@@ -96,7 +96,7 @@
     color: #0383C7;
 }
 .delete-icon{
-    color:red;
+    color:rgb(255, 255, 255) !important;
 }
 /* ==========================
    UPDATE VISIT MODAL
@@ -113,10 +113,10 @@
   z-index: 99999;
 
   /* Dark Blue Blur Theme */
-  background: rgba(10, 32, 55, 0.55);
+  background: rgba(87, 87, 87, 0.25) !important;
 
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .visit-modal {
@@ -133,6 +133,34 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 
   animation: visitPopup 0.25s ease;
+}
+.visit-modal input{
+  width:100%;
+  height:38px;
+
+  border:1.5px solid #9FD8EF;
+  border-radius:20px;
+
+  padding:0 14px;
+
+  outline:none;
+
+  background:#EAF8FF;
+
+  font-size:12px;
+  color:#374856;
+
+  transition:.25s ease;
+}
+
+.visit-modal input::placeholder{
+  color:#8FA2AD;
+}
+
+.visit-modal input:focus{
+  border-color:#0383C7;
+  background:#F4FCFF;
+  box-shadow:0 0 0 3px rgba(3,131,199,.12);
 }
 
 @keyframes visitPopup {
@@ -281,7 +309,7 @@
 /* Add Patient Button Dark Blue */
 
 .modal-active .patient-btn {
-  background: #0b2740 !important;
+  /* background: #0b2740 !important; */
   color: white !important;
   border: 1px solid rgba(255,255,255,0.2);
 }
@@ -333,8 +361,8 @@
 
   border-radius: 50%;
 
-  background: #ff4d4f;
-  color: white;
+  background: #ff4d4f !important;
+  color: white !important;
 
   font-size: 28px;
 
@@ -392,4 +420,166 @@
 
 .patient-row:hover {
   background: #f3f8fc !important;
+}
+
+.pm-add-overlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+ background: rgba(87, 87, 87, 0.25) !important;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  z-index:99999;
+}
+
+.pm-add-modal{
+  width:320px;
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  position:relative;
+  animation:pmAddPopup .25s ease;
+  box-shadow:0 12px 35px rgba(0,0,0,.2);
+}
+
+@keyframes pmAddPopup{
+  from{
+    opacity:0;
+    transform:scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.visit-close-btn,
+.pm-add-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+  background: #0383C7;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.visit-close-btn svg,
+.pm-add-close svg{
+  font-size: 13px;
+  display: block;
+}
+
+.pm-add-modal h3{
+  text-align:center;
+  font-size:16px;
+  margin-bottom:14px;
+  color:#222;
+}
+
+.pm-add-modal h4{
+  margin:10px 0;
+  font-size:12px;
+  color:#444;
+}
+
+.pm-add-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.pm-add-form label{
+  font-size:11px;
+  color:#666;
+  margin-bottom:4px;
+  margin-top:8px;
+}
+
+
+.pm-add-form input,
+.pm-add-form select{
+  width:100%;
+  height:38px;
+
+  border:1.5px solid #9FD8EF;
+  border-radius:20px;
+
+  padding:0 14px;
+
+  font-size:12px;
+  color:#374856;
+
+  outline:none;
+
+  /* Light Blue Background */
+  background:#EAF8FF;
+
+  transition:.25s ease;
+}
+
+/* Placeholder */
+
+.pm-add-form input::placeholder{
+  color:#8FA2AD;
+}
+
+/* Focus */
+
+.pm-add-form input:focus,
+.pm-add-form select:focus{
+  border-color:#0383C7;
+  background:#F4FCFF;
+  box-shadow:0 0 0 3px rgba(3,131,199,.12);
+}
+
+/* Select */
+
+.pm-add-form select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  height:38px;
+  padding:0 40px 0 14px;
+
+  background-color:#EAF8FF;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  background-size:12px;
+}
+.delete-icon-circle svg{
+  color:#fff !important;
+  fill:#fff !important;
+  font-size:28px;
+}
+.pm-add-btn{
+  width:100%;
+  height:40px;
+  margin-top:16px;
+  border:none;
+  border-radius:22px;
+  background:#0383C7;
+  color:#fff;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.pm-add-btn:hover{
+  background:#0272ad;
 }

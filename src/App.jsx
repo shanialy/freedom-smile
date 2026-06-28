@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SplashScreen from "./components/SplashScreen";
+// import SplashScreen from "./components/SplashScreen";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import OTP_Verification from "./pages/OTP_Verification";
@@ -27,8 +27,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SplashScreen />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/" element={<SplashScreen />} /> */}
+        <Route path="/" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/SetPassword" element={<SetPassword />} />
         <Route path="/OTP_Verification" element={<OTP_Verification />} />

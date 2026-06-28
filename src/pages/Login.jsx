@@ -1,9 +1,17 @@
 import "./Login.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // Filhal direct dashboard par bhej do
+    navigate("/dashboard");
+  };
 
   return (
     <div className="login-page">
@@ -46,13 +54,12 @@ function Login() {
             Remember me
           </label>
 
-          <Link to="/ForgotPassword">
-  Forgot Password?
-</Link>
-          
+          <Link to="/ForgotPassword">Forgot Password?</Link>
         </div>
 
-        <button className="login-btn">Login</button>
+        <button className="login-btn" onClick={handleLogin}>
+          Login
+        </button>
       </div>
     </div>
   );

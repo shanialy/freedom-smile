@@ -3,6 +3,7 @@ import "./TipDetail.css";
 import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 
 import {
   FaThLarge,
@@ -92,7 +93,7 @@ function TipDetail() {
         className="modal-close-btn"
         onClick={() => setShowDeleteModal(false)}
       >
-        ×
+         <FaTimes />
       </button>
 
       <div className="delete-icon-circle">

@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 import {
   FaThLarge,
@@ -221,15 +222,14 @@ function Dashboard() {
       onClick={(e) => e.stopPropagation()}
     >
       <button
-        className="close-btn"
-        onClick={() => setShowModal(false)}
-      >
-        ×
-      </button>
-
+  className="close-btn"
+  onClick={() => setShowModal(false)}
+>
+  <FaTimes />
+</button>
       <h3>Add New Patient</h3>
 
-      <form>
+     <form className="patient-form">
         <label>Full Name</label>
         <input
           type="text"

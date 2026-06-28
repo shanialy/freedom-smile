@@ -69,16 +69,21 @@ body{
   color: #000;
   width: 100%;
   padding: 16px 25px;
-
+margin-bottom: -5px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
 .menu a.active {
-  background: #0383C74D;
+  background: #39C6F0;
+  color: #fff;
+  border-radius: 10px;
 }
 
+.menu a.active svg {
+  color: #fff;
+}
 .logout-btn{
   margin-top:auto;
   margin:20px;
@@ -395,7 +400,7 @@ th,td{
   align-items: center;
 
   /* background: rgba(255, 255, 255, 0.15); */
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(87, 87, 87, 0.25) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
@@ -458,8 +463,35 @@ th,td{
   margin-bottom: 4px;
 }
 
-.patient-modal input,
 .patient-modal select {
+  width: 100%;
+  height: 34px;
+
+  border: 1.5px solid #8bc7e6;
+  border-radius: 18px;
+
+  padding: 0 35px 0 12px; /* right side space */
+
+  font-size: 11px;
+  color: #444;
+  outline: none;
+  background-color: #fff;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+
+  /* Right margin jahan arrow hoga */
+  background-position: right 14px center;
+
+  background-size: 12px;
+}
+
+.patient-modal input{
   width: 100%;
   height: 34px;
 
@@ -508,30 +540,32 @@ th,td{
   background: #0270ab;
 }
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
 
-  width: 22px;
-  height: 22px;
+  width:24px;
+  height:24px;
 
-  border: none;
-  border-radius: 50%;
+  border:none;
+  border-radius:50%;
 
-  background: #0383c7;
-  color: white;
+  background:#0383C7;
+  color:#fff;
 
-  font-size: 14px;
-  line-height: 1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
+  padding:0;
+  cursor:pointer;
 }
 
+.close-btn svg{
+  font-size:11px;
+  display:block;
+}
 .close-btn:hover {
   background: #02689e;
 }
@@ -553,9 +587,6 @@ th,td{
   cursor:pointer;
 }
 
-/* =========================
-   LAPTOP
-========================= */
 
 @media (max-width:1200px){
 
@@ -572,9 +603,6 @@ th,td{
   }
 }
 
-/* =========================
-   TABLET + MOBILE
-========================= */
 
 @media (max-width:992px){
 
@@ -583,7 +611,7 @@ th,td{
     height:auto;
   }
 
-  /* Sidebar Hidden By Default */
+ 
   .menu-toggle{
     display:block;
     flex-shrink:0;
@@ -663,9 +691,6 @@ th,td{
   }
 }
 
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width:768px){
 
@@ -715,9 +740,6 @@ th,td{
   }
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
 
 @media (max-width:480px){
 
@@ -759,9 +781,6 @@ th,td{
   }
 }
 
-/* =========================
-   SIDEBAR OVERLAY
-========================= */
 
 .sidebar-overlay{
   position:fixed;
@@ -770,4 +789,193 @@ th,td{
   z-index:9998;
 }
 
+/* logout modalllll */
+.logout-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
 
+.logout-popup{
+  width:310px;
+  background:#fff;
+  border-radius:14px;
+  padding:26px 22px 20px;
+  position:relative;
+  text-align:center;
+  animation:logoutPop .25s ease;
+}
+
+@keyframes logoutPop{
+  from{
+    opacity:0;
+    transform:scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.logout-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+
+  width:24px;
+  height:24px;
+
+  border:none;
+  border-radius:50%;
+  background:#0383C7;
+  color:#fff;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:0;
+  line-height:0;
+
+  cursor:pointer;
+}
+
+.logout-close svg{
+  font-size:11px;
+  display:block;
+}
+
+.logout-icon{
+  width:56px;
+  height:56px;
+  margin:auto;
+  border-radius:50%;
+  background:#0383C7;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+}
+
+.logout-popup h3{
+  margin-top:12px;
+  font-size:16px;
+  color:#374856;
+}
+
+.logout-popup p{
+  margin-top:8px;
+  color:#777;
+  font-size:12px;
+  line-height:18px;
+}
+
+.logout-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:18px;
+}
+
+.logout-no,
+.logout-yes{
+  width:95px;
+  height:34px;
+  border-radius:18px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.logout-no{
+  background:#fff;
+  color:#0383C7;
+  border:1px solid #0383C7;
+}
+
+.logout-yes{
+  border:none;
+  background:#0383C7;
+  color:#fff;
+}
+
+   /* MODAL INPUTS */
+
+.patient-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.patient-form label{
+  font-size:10px;
+  color:#666;
+  margin-top:6px;
+  margin-bottom:4px;
+}
+
+/* INPUTS */
+
+.patient-form input,
+.patient-form select{
+  width:100%;
+  height:36px;
+
+  border:1.5px solid #9fd8ef;
+  border-radius:18px;
+
+  padding:0 14px;
+
+  font-size:11px;
+  color:#374856;
+
+  outline:none;
+
+  /* Light Blue Background */
+  background:#EAF8FF;
+
+  transition:.25s ease;
+}
+
+/* Placeholder */
+
+.patient-form input::placeholder{
+  color:#8fa2ad;
+}
+
+/* Focus */
+
+.patient-form input:focus,
+.patient-form select:focus{
+  border-color:#0383C7;
+  background:#F4FCFF;
+  box-shadow:0 0 0 3px rgba(3,131,199,.12);
+}
+
+/* Select */
+
+.patient-form select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  padding-right:40px;
+
+  background-color:#EAF8FF;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  background-size:12px;
+}
+
+/* Date icon spacing */
+
+.patient-form input[type="date"]{
+  padding-right:14px;
+}

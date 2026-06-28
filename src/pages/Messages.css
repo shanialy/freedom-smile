@@ -212,12 +212,11 @@
 }
 
 .msg-me{
-    background:#d9fdd3;
+    background:#a5d6f3;   
     align-self:flex-end;
     margin-left:auto;
     border-top-right-radius:0;
 }
-
 .msg-bubble p{
     color:#333;
     font-size:14px;

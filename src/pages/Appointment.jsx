@@ -114,7 +114,7 @@ function Appointment() {
   </>
 ))}
             
-            <hr />
+            {/* <hr /> */}
           </div>
         </div>
       </main>
