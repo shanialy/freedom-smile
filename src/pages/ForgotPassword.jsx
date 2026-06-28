@@ -1,8 +1,13 @@
 import "./ForgotPass.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ForgotPassword() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const handleContinue = () => {
+  navigate("/OTP_Verification");
+};
 
   return (
     <div className="login-page">
@@ -17,7 +22,9 @@ function ForgotPassword() {
             placeholder="Enter Your Email Address"
           />
         </div>
-        <button className="login-btn">Continue</button>
+       <button className="login-btn" onClick={handleContinue}>
+  Continue
+</button>
       </div>
     </div>
   );
