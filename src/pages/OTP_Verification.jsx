@@ -27,7 +27,7 @@ function OTP_Verification() {
   useEffect(() => {
     if (otp.every((digit) => digit !== "")) {
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/SetPassword");
       }, 300);
     }
   }, [otp, navigate]);
