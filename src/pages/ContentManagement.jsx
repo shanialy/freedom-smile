@@ -216,74 +216,79 @@ Our goal is to provide healthcare professionals with a reliable and easy-to-use 
 
         {/* Content Box */}
 
-        {activeTab === "quotes" ? (
-          <div className="quotes-section">
-            <div className="education-header">
-             <button
-  className="add-new-btn"
-  onClick={() => setShowAddQuoteModal(true)}
->
-  + Add New
-</button>
+       {activeTab === "quotes" ? (
+  <div className="quotes-section">
+    <div className="education-header">
+      <button
+        className="add-new-btn"
+        onClick={() => setShowAddQuoteModal(true)}
+      >
+        + Add New
+      </button>
+    </div>
+
+    <div className="quotes-grid">
+      {quotesData.map((item, index) => (
+        <div className="quote-card" key={index}>
+          <div className="quote-left">
+            <div className="quote-icon-wrapper">
+              <FaQuoteLeft className="quote-icon" />
             </div>
 
-            <div className="quotes-grid">
-              {quotesData.map((item, index) => (
-                <div className="quote-card" key={index}>
-                  <div className="quote-left">
-                    <div className="quote-icon-wrapper">
-                      <FaQuoteLeft className="quote-icon" />
-                    </div>
+            <div className="quote-text">{item.quote}</div>
+          </div>
 
-                    <div className="quote-text">{item.quote}</div>
-                  </div>
+          <div className="quote-actions">
+            <FaEdit
+              onClick={() => {
+                setEditQuoteText(item.quote);
+                setShowEditQuoteModal(true);
+              }}
+            />
 
-                  <div className="quote-actions">
-                    <div className="quote-actions">
-                     <FaEdit
-  onClick={() => {
-    setEditQuoteText(item.quote);
-    setShowEditQuoteModal(true);
-  }}
-/>
-                      <FaTrash
-                        className="delete-icon"
-                        onClick={() => setShowDeleteModal(true)}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <FaTrash
+              className="delete-icon"
+              onClick={() => setShowDeleteModal(true)}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+) : activeTab === "education" ? (
+  <div className="education-section">
+    <div className="education-header">
+      <Link to="/add-new-tip">
+        <button className="add-new-btn">+ Add New</button>
+      </Link>
+    </div>
+
+    <div className="education-grid">
+      {educationTips.map((tip, index) => (
+        <Link
+          to="/tip-detail"
+          key={index}
+          className="education-card-link"
+        >
+          <div className="education-card">
+            <div className="education-image">
+              <FaImage />
+            </div>
+
+            <div className="education-content">
+              <h4>{tip.title}</h4>
+              <p>{tip.description}</p>
             </div>
           </div>
-        ) : activeTab === "education" ? (
-          <div className="education-section">
-            <div className="education-header">
-              <Link to="/add-new-tip">
-                <button className="add-new-btn">+ Add New</button>
-              </Link>
-            </div>
-
-            <div className="education-grid">
-              {educationTips.map((tip, index) => (
-                <div className="education-card" key={index}>
-                  <div className="education-image">
-                    <FaImage />
-                  </div>
-
-                  <div className="education-content">
-                    <h4>{tip.title}</h4>
-                    <p>{tip.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="content-box">
-            <p>{contentData[activeTab]}</p>
-          </div>
-        )}
+        </Link>
+      ))}
+    </div>
+  </div>
+) : (
+  <div className="content-box">
+    <p>{contentData[activeTab]}</p>
+  </div>
+)}
 
         {showDeleteModal && (
           <div className="delete-modal-overlay">

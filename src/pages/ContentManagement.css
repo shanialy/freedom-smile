@@ -472,3 +472,9 @@
 .quote-publish-btn:hover{
   opacity:.95;
 }
+
+.education-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
