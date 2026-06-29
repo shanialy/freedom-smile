@@ -69,7 +69,7 @@ const navigate = useNavigate();
 
           <button
             className="publish-btn"
-            onClick={() => navigate("/tip-detail")}
+            onClick={() => navigate("/ContentManagement")}
           >
             Publish
           </button>
