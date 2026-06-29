@@ -1048,4 +1048,7 @@ th,td{
   table{
     min-width: 700px;
   }
+  .logout-btn{
+    margin-top: 12px !important;
+  }
 }
