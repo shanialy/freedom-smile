@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
+import { createPortal } from "react-dom";
 
 import {
   FaThLarge,
@@ -85,47 +86,48 @@ function TipDetail() {
 
         </div>
 
-{showDeleteModal && (
-  <div className="delete-modal-overlay">
-    <div className="delete-modal">
-
-      <button
-        className="modal-close-btn"
-        onClick={() => setShowDeleteModal(false)}
-      >
-         <FaTimes />
-      </button>
-
-      <div className="delete-icon-circle">
-        <FaTrash />
-      </div>
-
-      <h3 className="delete-modal-title">
-        Delete Tip
-      </h3>
-
-      <p className="delete-modal-text">
-        Are you sure you want to delete this tip?
-      </p>
-
-      <div className="delete-modal-buttons">
+{showDeleteModal &&
+  createPortal(
+    <div className="delete-modal-overlay">
+      <div className="delete-modal">
 
         <button
-          className="cancel-btn"
+          className="modal-close-btn"
           onClick={() => setShowDeleteModal(false)}
         >
-          No
+          <FaTimes />
         </button>
 
-        <button className="confirm-btn">
-          Yes
-        </button>
+        <div className="delete-icon-circle">
+          <FaTrash />
+        </div>
+
+        <h3 className="delete-modal-title">
+          Delete Tip
+        </h3>
+
+        <p className="delete-modal-text">
+          Are you sure you want to delete this tip?
+        </p>
+
+        <div className="delete-modal-buttons">
+          <button
+            className="cancel-btn"
+            onClick={() => setShowDeleteModal(false)}
+          >
+            No
+          </button>
+
+          <button className="confirm-btn">
+            Yes
+          </button>
+        </div>
 
       </div>
-
-    </div>
-  </div>
-)}
+    </div>,
+    document.body
+  )
+}
 
       </main>
     </div>

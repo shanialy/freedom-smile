@@ -1,38 +1,51 @@
-.payment-title {
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 18px;
+.payment-title{
+  font-size:22px;
+  font-weight:600;
+  color:#374856;
+  margin-bottom:20px;
 }
 
-.payment-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-bottom: 15px;
+/* Container - Dashboard jaisa */
+.payment-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:20px;
+
+  background:transparent;
+  border:none;
 }
 
-.payment-card {
-  background: #e9ecef;
-  border: 1px solid #d7d7d7;
-  border-radius: 14px;
-  text-align: center;
-  padding: 18px;
-  height: 130px;
+/* Individual Cards */
+.payment-card{
+  background:#0383C733;
+  border:1px solid #0383C7;
+  border-radius:15px;
+
+  padding:25px;
+  text-align:center;
+
+  min-height:130px;
+  /* width: 300px; */
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-.payment-card h3 {
-  color: #374856;
-  font-size: 30px;
-  margin-bottom: 5px;
-  margin: 20px auto;
+/* Amount */
+.payment-card h3{
+  font-size:32px;
+  font-weight:700;
+  color:#374856;
+  margin:0 0 10px;
 }
 
-.payment-card p {
-  color: #666;
-  margin:  auto;
-  font-size: 12px;
-  margin-top: -15px;
+/* Label */
+.payment-card p{
+  font-size:14px;
+  color:#666;
+  margin:0;
 }
 
 .payment-table-box {
@@ -180,4 +193,24 @@
 
 .bar5 {
   height: 220px;
+}
+
+@media (max-width:1024px){
+  .payment-cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:768px){
+  .payment-cards{
+    grid-template-columns:1fr;
+  }
+
+  .payment-card{
+    min-height:110px;
+  }
+
+  .payment-card h3{
+    font-size:28px;
+  }
 }

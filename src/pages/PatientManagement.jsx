@@ -135,24 +135,16 @@ function PatientManagement() {
         </div>
 
         {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "20px",
-          }}
-        >
-          <h2 className="patient-title">Patients Management</h2>
+       <div className="patient-header-row">
+  <h2 className="patient-title">Patients Management</h2>
 
-          <button
-  className="patient-btn"
-  style={{ marginTop: "10px" }}
-  onClick={() => setShowAddPatientModal(true)}
->
-  Add Patient
-</button>
-        </div>
+  <button
+    className="patient-btn"
+    onClick={() => setShowAddPatientModal(true)}
+  >
+    Add Patient
+  </button>
+</div>
 
         {/* Table */}
         <div className="patient-table-wrapper">

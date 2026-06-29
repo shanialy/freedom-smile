@@ -77,27 +77,29 @@ function Payment() {
 
         {/* Cards */}
 
-        <div className="payment-cards">
-          <div className="payment-card">
-            <h3>$5,235</h3>
-            <p>Total Revenue</p>
-          </div>
+        <div className="payment-summary-wrapper">
 
-          <div className="payment-card">
-            <h3>$2,261</h3>
-            <p>Total Tax</p>
-          </div>
+  <div className="payment-summary-card">
+    <h3>$5,235</h3>
+    <p>Total Revenue</p>
+  </div>
 
-          <div className="payment-card">
-            <h3>$1,542</h3>
-            <p>Total Discounts</p>
-          </div>
+  <div className="payment-summary-card">
+    <h3>$2,261</h3>
+    <p>Total Tax</p>
+  </div>
 
-          <div className="payment-card">
-            <h3>$1,222</h3>
-            <p>Total Rewards</p>
-          </div>
-        </div>
+  <div className="payment-summary-card">
+    <h3>$1,542</h3>
+    <p>Total Discounts</p>
+  </div>
+
+  <div className="payment-summary-card">
+    <h3>$1,222</h3>
+    <p>Total Rewards</p>
+  </div>
+
+</div>
 
         {/* Table */}
 

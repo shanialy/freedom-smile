@@ -188,6 +188,7 @@ margin-bottom: -5px;
   display:flex;
   justify-content:space-between;
   margin:25px 0;
+  margin-bottom: 60px;
 }
 
 .heading-row span{
@@ -679,7 +680,7 @@ th,td{
   }
 
   .charts{
-    grid-template-columns:1fr;
+    /* grid-template-columns:1fr; */
   }
 
   .bottom-section{
@@ -1029,7 +1030,7 @@ th,td{
   }
 
   .charts{
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 
   .bottom-section{
