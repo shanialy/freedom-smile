@@ -1,0 +1,940 @@
+{
+  
+  "dashboard": {
+    "greeting": "Buenos Días",
+    "company": "Freedom Smile",
+
+    "buttons": {
+      "addPatient": "Agregar Paciente",
+      "addNow": "Agregar Ahora"
+    },
+
+    "stats": {
+      "totalRevenue": "Ingresos Totales",
+      "activePatients": "Pacientes Activos",
+      "pendingOrders": "Órdenes Pendientes",
+      "upcomingAppointments": "Próximas Citas"
+    },
+
+    "charts": {
+      "revenueTrend": "Tendencia de Ingresos",
+      "patientGrowth": "Crecimiento de Pacientes"
+    },
+
+    "appointments": {
+      "title": "Nuevas Citas",
+      
+      "headers": {
+        "patientId": "ID del Paciente",
+        "name": "Nombre",
+        "location": "Ubicación",
+        "date": "Fecha",
+        "status": "Estado",
+        "amount": "Monto"
+      },
+
+      "data": [
+        {
+          "patientId": "EY1001",
+          "name": "John Smith",
+          "location": "Nueva York",
+          "date": "5 de mayo de 2026",
+          "status": "Pagado",
+          "amount": "$25.69"
+        }
+      ]
+    },
+
+    "activity": {
+      "title": "Actividad Reciente",
+      "items": [
+        "Cita reservada con el Dr. Roy",
+        "Nuevo paciente registrado",
+        "Factura generada",
+        "Cita completada"
+      ]
+    },
+
+    "modal": {
+      "title": "Agregar Nuevo Paciente",
+
+      "fields": {
+        "fullName": "Nombre Completo",
+        "mobileNumber": "Número de Teléfono",
+        "gender": "Género",
+        "dateOfBirth": "Fecha de Nacimiento",
+        "clinicDetails": "Detalles de la Clínica y Retenedor",
+        "clinicLocation": "Ubicación de la Clínica",
+        "retainerDate": "Fecha del Retenedor"
+      },
+
+      "placeholders": {
+        "fullName": "Nombre Completo del Paciente",
+        "mobileNumber": "+1 123 456 7890"
+      },
+
+      "options": {
+        "selectGender": "Seleccionar Género",
+        "male": "Masculino",
+        "female": "Femenino",
+
+        "selectClinic": "Seleccionar Ubicación de la Clínica",
+        "newYork": "Nueva York",
+        "california": "California"
+      }
+    }
+  
+},
+  "patientManagement": {
+  "title": "Gestión de Pacientes",
+
+  "searchPlaceholder": "Buscar...",
+
+  "admin": {
+    "name": "Super Administrador",
+    "email": "admin@gmail.com"
+  },
+
+  "buttons": {
+    "addPatient": "Agregar Paciente",
+    "updateNow": "Actualizar Ahora",
+    "addNow": "Agregar Ahora",
+    "yes": "Sí",
+    "no": "No"
+  },
+
+  "table": {
+    "headers": {
+      "name": "Nombre",
+      "contact": "Contacto",
+      "clinicLocation": "Ubicación de la Clínica",
+      "status": "Estado",
+      "retainerDueTime": "Tiempo Restante del Retenedor",
+      "lastVisit": "Última Visita",
+      "actions": "Acciones"
+    }
+  }
+
+},
+  "contentManagement": {
+    "title": "Sistema de Gestión de Contenido",
+
+    "tabs": {
+      "terms": "Términos y Condiciones",
+      "privacy": "Política de Privacidad",
+      "about": "Acerca de la Aplicación",
+      "education": "Consejos Educativos",
+      "quotes": "Citas Diarias"
+    },
+
+    "buttons": {
+      "addNew": "+ Agregar Nuevo",
+      "publish": "Publicar",
+      "update": "Actualizar",
+      "yes": "Sí",
+      "no": "No"
+    },
+
+    "modals": {
+      "deleteTitle": "Eliminar Cita",
+      "deleteMessage": "¿Está seguro de que desea eliminar esta cita?",
+      "addQuote": "Agregar Nueva Cita",
+      "editQuote": "Editar Cita",
+      "content": "Contenido",
+      "placeholder": "Agregar Contenido"
+    },
+
+    "educationTips": [
+      {
+        "title": "Hábitos Diarios de Cepillado",
+        "description": "Cepille sus dientes dos veces al día con pasta dental con flúor para prevenir las caries y mantener las encías saludables."
+      },
+      {
+        "title": "Revisiones Dentales Regulares",
+        "description": "Visite a su dentista cada seis meses para una limpieza profesional y la detección temprana de problemas bucales."
+      },
+      {
+        "title": "Alimentación Saludable",
+        "description": "Reduzca los alimentos y bebidas azucaradas. Consuma frutas, verduras y alimentos ricos en calcio."
+      },
+      {
+        "title": "Use Hilo Dental Todos los Días",
+        "description": "El hilo dental elimina la placa y los restos de comida donde el cepillo no puede llegar."
+      },
+      {
+        "title": "Beba Más Agua",
+        "description": "El agua ayuda a eliminar los restos de comida y mantiene la boca hidratada."
+      },
+      {
+        "title": "Proteja Sus Dientes",
+        "description": "Use un protector bucal al practicar deportes para reducir el riesgo de lesiones dentales."
+      },
+      {
+        "title": "Evite Fumar",
+        "description": "Fumar puede manchar los dientes, dañar las encías y aumentar el riesgo de cáncer oral."
+      },
+      {
+        "title": "Cambie el Cepillo de Dientes",
+        "description": "Cambie su cepillo de dientes cada tres meses o antes si las cerdas están desgastadas."
+      }
+    ],
+
+    "quotes": [
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia.",
+      "Tu sonrisa refleja tu cuidado. Protégela cada día con hábitos sencillos que marcan la diferencia."
+    ],
+
+    "content": {
+      "terms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod tempor incididunt ut labore et dolore magna aliqua.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+
+      "privacy": "La Política de Privacidad explica cómo se recopila, almacena y protege la información del usuario. Toda la información personal permanece confidencial y se utiliza únicamente para mejorar la calidad del servicio.\n\nLos datos del usuario nunca se comparten sin consentimiento, excepto cuando la ley lo exige. Las medidas de seguridad se revisan y actualizan periódicamente.\n\nNuestra organización sigue las mejores prácticas de la industria para garantizar la transparencia y la responsabilidad.",
+
+      "about": "Freedom Smile es una moderna plataforma de gestión dental diseñada para simplificar la atención al paciente, las citas, las referencias, los pagos y la comunicación.\n\nEl sistema ayuda a las clínicas a optimizar sus operaciones diarias mientras mejora la experiencia del paciente mediante herramientas digitales.\n\nNuestro objetivo es proporcionar a los profesionales de la salud una solución confiable y fácil de usar."
+    }
+  },
+"notification": {
+  "title": "Notificaciones",
+
+  "buttons": {
+    "create": "Crear Notificaciones"
+  },
+
+  "tabs": {
+    "sent": "Enviadas",
+    "scheduled": "Programadas",
+    "draft": "Borradores"
+  },
+
+  "labels": {
+    "target": "Destino",
+    "date": "Fecha"
+  },
+
+  "sent": [
+    {
+      "title": "Recordatorio de Reemplazo del Retenedor",
+      "desc": "Su retenedor necesita ser reemplazado...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-01",
+      "action": "Recordatorio"
+    },
+    {
+      "title": "Recordatorio de Pago",
+      "desc": "Su pago está pendiente...",
+      "target": "Individual",
+      "date": "2026-09-02",
+      "action": "Alerta"
+    },
+    {
+      "title": "Recordatorio de Cita",
+      "desc": "Tiene una cita próxima programada...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-03",
+      "action": "Recordatorio"
+    },
+    {
+      "title": "Nueva Oferta",
+      "desc": "Descuento especial en atención dental...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-04",
+      "action": "Oferta"
+    },
+    {
+      "title": "Recordatorio de Seguimiento",
+      "desc": "Por favor programe su seguimiento...",
+      "target": "Individual",
+      "date": "2026-09-05",
+      "action": "Alerta"
+    },
+    {
+      "title": "Actualización del Tratamiento",
+      "desc": "Su plan de tratamiento ha sido actualizado...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-06",
+      "action": "Información"
+    },
+    {
+      "title": "Anuncio de la Clínica",
+      "desc": "Los horarios de la clínica fueron actualizados...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-07",
+      "action": "Aviso"
+    }
+  ],
+
+  "scheduled": [
+    {
+      "title": "Recordatorio de Cita Programada",
+      "desc": "Se enviará mañana...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-10",
+      "action": "Programado"
+    },
+    {
+      "title": "Alerta de Pago Programada",
+      "desc": "Se enviará la próxima semana...",
+      "target": "Individual",
+      "date": "2026-09-15",
+      "action": "Programado"
+    }
+  ],
+
+  "draft": [
+    {
+      "title": "Notificación en Borrador",
+      "desc": "Esta notificación está guardada como borrador...",
+      "target": "Todos los Pacientes",
+      "date": "2026-09-20",
+      "action": "Borrador"
+    }
+  ]
+},
+
+  "referrals": {
+    "title": "Referencias",
+
+    "cards": {
+      "totalRevenue": "Ingresos Totales",
+      "totalTax": "Impuestos Totales",
+      "totalDiscounts": "Descuentos Totales"
+    },
+
+    "table": {
+      "title": "Lista de Referencias",
+      "headers": {
+        "referrer": "Referente",
+        "referredPatient": "Paciente Referido",
+        "date": "Fecha",
+        "status": "Estado",
+        "reward": "Recompensa",
+        "action": "Acción"
+      }
+    },
+
+    "status": {
+      "converted": "Convertido",
+      "pending": "Pendiente"
+    },
+
+    "action": {
+      "completed": "Completado"
+    },
+
+    "data": [
+      {
+        "referrer": "John Smith",
+        "referredPatient": "Milly Johnson",
+        "date": "5 de mayo de 2026",
+        "status": "Convertido",
+        "reward": "$100",
+        "action": "Completado"
+      },
+      {
+        "referrer": "Sarah Wilson",
+        "referredPatient": "David Brown",
+        "date": "8 de mayo de 2026",
+        "status": "Convertido",
+        "reward": "$75",
+        "action": "Completado"
+      },
+      {
+        "referrer": "Michael Clark",
+        "referredPatient": "Emma Davis",
+        "date": "10 de mayo de 2026",
+        "status": "Convertido",
+        "reward": "$120",
+        "action": "Completado"
+      },
+      {
+        "referrer": "Olivia Taylor",
+        "referredPatient": "James Wilson",
+        "date": "12 de mayo de 2026",
+        "status": "Convertido",
+        "reward": "$90",
+        "action": "Completado"
+      },
+      {
+        "referrer": "Daniel Lee",
+        "referredPatient": "Sophia Martin",
+        "date": "15 de mayo de 2026",
+        "status": "Convertido",
+        "reward": "$80",
+        "action": "Completado"
+      }
+    ]
+  },
+  "reports": {
+    "title": "Gestión de Informes",
+
+    "searchPlaceholder": "Buscar...",
+
+    "admin": {
+      "name": "Super Administrador",
+      "email": "admin@gmail.com"
+    },
+
+    "fields": {
+      "reportType": "Tipo de Informe",
+      "startDate": "Fecha de Inicio",
+      "endDate": "Fecha de Finalización"
+    },
+
+    "reportTypes": {
+      "revenue": "Informe de Ingresos",
+      "patient": "Informe de Pacientes",
+      "appointment": "Informe de Citas"
+    },
+
+    "placeholders": {
+      "startDate": "11/01/2026",
+      "endDate": "11/08/2026"
+    },
+
+    "buttons": {
+      "export": "Exportar Archivo"
+    }
+  },
+  "messages": {
+    "searchPlaceholder": "Buscar...",
+    "chatPlaceholder": "Escribe un mensaje...",
+    "contactPreview": "Lorem ipsum dolor sit amet",
+    "now": "Ahora",
+
+    "contacts": [
+      {
+        "id": 1,
+        "name": "Marvin McKinney",
+        "role": "Asistente de Enfermería",
+        "time": "5m",
+        "avatar": "https://i.pravatar.cc/100?img=11",
+        "unread": true,
+        "messages": [
+          {
+            "sender": "them",
+            "text": "Hola Doctor 👋",
+            "time": "09:00"
+          },
+          {
+            "sender": "me",
+            "text": "Hola Marvin. ¿Cómo estás hoy?",
+            "time": "09:02"
+          },
+          {
+            "sender": "them",
+            "text": "Me siento mucho mejor.",
+            "time": "09:03"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Jacob Jones",
+        "role": "Coordinador de Salud",
+        "time": "3m",
+        "avatar": "https://i.pravatar.cc/100?img=12",
+        "unread": true,
+        "messages": [
+          {
+            "sender": "them",
+            "text": "¿Puedo reservar una cita para mañana?",
+            "time": "10:20"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Leslie Alexander",
+        "role": "Diseñador Web",
+        "time": "3m",
+        "avatar": "https://i.pravatar.cc/100?img=13",
+        "unread": false,
+        "messages": [
+          {
+            "sender": "them",
+            "text": "Buenos días 😊",
+            "time": "08:10"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Eleanor Pena",
+        "role": "Diseñadora UI",
+        "time": "5m",
+        "avatar": "https://i.pravatar.cc/100?img=14",
+        "unread": false,
+        "messages": [
+          {
+            "sender": "them",
+            "text": "Por favor revisa las nuevas pantallas.",
+            "time": "11:00"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Kathryn Murphy",
+        "role": "Asistente Médico",
+        "time": "5m",
+        "avatar": "https://i.pravatar.cc/100?img=15",
+        "unread": false,
+        "messages": [
+          {
+            "sender": "them",
+            "text": "Gracias doctor.",
+            "time": "12:00"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Wade Warren",
+        "role": "Diseñador Web",
+        "time": "5m",
+        "avatar": "https://i.pravatar.cc/100?img=16",
+        "unread": false,
+        "messages": [
+          {
+            "sender": "them",
+            "text": "¿Reunión a las 5?",
+            "time": "04:00"
+          }
+        ]
+      }
+    ]
+  },
+  "payment": {
+    "title": "Gestión de Pagos",
+
+    "summary": {
+      "totalRevenue": "Ingresos Totales",
+      "totalTax": "Impuestos Totales",
+      "totalDiscounts": "Descuentos Totales",
+      "totalRewards": "Recompensas Totales"
+    },
+
+    "table": {
+      "title": "Pagos Recientes",
+
+      "headers": {
+        "patientId": "ID del Paciente",
+        "name": "Nombre",
+        "location": "Ubicación",
+        "date": "Fecha",
+        "status": "Estado",
+        "amount": "Monto"
+      }
+    },
+
+    "status": {
+      "paid": "Pagado"
+    },
+
+    "chart": {
+      "title": "Desglose de Ingresos"
+    },
+
+    "payments": [
+      {
+        "id": "EYT001",
+        "name": "John Smith",
+        "location": "Nueva York",
+        "date": "5 de mayo de 2026",
+        "amount": "$25.69"
+      },
+      {
+        "id": "EYT001",
+        "name": "John Smith",
+        "location": "Nueva York",
+        "date": "5 de mayo de 2026",
+        "amount": "$25.69"
+      },
+      {
+        "id": "EYT001",
+        "name": "John Smith",
+        "location": "Nueva York",
+        "date": "5 de mayo de 2026",
+        "amount": "$25.69"
+      },
+      {
+        "id": "EYT001",
+        "name": "John Smith",
+        "location": "Nueva York",
+        "date": "5 de mayo de 2026",
+        "amount": "$25.69"
+      }
+    ]
+  },
+  "appointment": {
+  "title": "Citas",
+  "week": "Esta semana del 26 de abril al 2 de mayo de 2026",
+  "schedule": "Programar",
+
+  "data": [
+    {
+      "time": "08:00 AM",
+      "name": "Sarah Johnson",
+      "type": "Chequeo",
+      "duration": "30 min"
+    },
+    {
+      "time": "08:00 AM",
+      "name": "Sarah Johnson",
+      "type": "Chequeo",
+      "duration": "30 min"
+    },
+    {
+      "time": "09:00 AM",
+      "name": "Sarah Johnson",
+      "type": "Chequeo",
+      "duration": "30 min"
+    },
+    {
+      "time": "09:00 AM",
+      "name": "Sarah Johnson",
+      "type": "Chequeo",
+      "duration": "30 min"
+    },
+    {
+      "time": "10:00 AM",
+      "name": "Sarah Johnson",
+      "type": "Chequeo",
+      "duration": "30 min"
+    },
+    {
+      "time": "10:00 AM",
+      "name": "Sarah Johnson",
+      "type": "Chequeo",
+      "duration": "30 min"
+    }
+  ]
+},
+
+  "patientDetails": {
+    "title": "Patient Details",
+    "issueReward": "Issue Reward",
+    "sendNotification": "Send Notification",
+
+    "patientInfo": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "status": "Status",
+      "retainerDueDate": "Retainer Due Date",
+      "lastVisit": "Last Visit",
+
+      "nameValue": "John Smith",
+      "emailValue": "john.smith@email.com",
+      "phoneValue": "+1234567890",
+      "statusValue": "Active",
+      "retainerValue": "11 Months",
+      "lastVisitValue": "March, 16 2026"
+    },
+
+    "buttons": {
+      "deletePatient": "Delete Patient",
+      "save": "Save",
+      "addNow": "Add Now",
+      "no": "No",
+      "yes": "Yes"
+    },
+
+    "appointmentHistory": {
+      "title": "Appointment History",
+      "newAppointments": "New Appointments",
+
+      "table": {
+        "patientId": "Patient ID",
+        "name": "Name",
+        "location": "Location",
+        "date": "Date",
+        "status": "Status",
+        "amount": "Amount"
+      },
+
+      "rows": [
+        {
+          "id": "EV1001",
+          "name": "John Smith",
+          "location": "New York",
+          "date": "May, 5 2026",
+          "status": "Paid",
+          "amount": "$25.69"
+        },
+        {
+          "id": "EV1001",
+          "name": "John Smith",
+          "location": "New York",
+          "date": "May, 5 2026",
+          "status": "Paid",
+          "amount": "$25.69"
+        },
+        {
+          "id": "EV1001",
+          "name": "John Smith",
+          "location": "New York",
+          "date": "May, 5 2026",
+          "status": "Paid",
+          "amount": "$25.69"
+        },
+        {
+          "id": "EV1001",
+          "name": "John Smith",
+          "location": "New York",
+          "date": "May, 5 2026",
+          "status": "Paid",
+          "amount": "$25.69"
+        }
+      ]
+    },
+
+    "deleteModal": {
+      "title": "Delete Patient",
+      "message": "Are you sure you want to delete this patient?"
+    },
+
+    "editModal": {
+      "title": "Edit Patient Details",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Patient Full Name",
+
+      "mobileNumber": "Mobile Number",
+      "mobilePlaceholder": "+123 456 7890",
+
+      "gender": "Gender",
+      "selectGender": "Select Gender",
+      "male": "Male",
+      "female": "Female",
+
+      "dateOfBirth": "Date Of Birth",
+
+      "clinicRetainer": "Clinic & Retainer Details",
+
+      "clinicLocation": "Clinic Location",
+      "selectClinic": "Select Clinic Location",
+      "newYork": "New York",
+      "chicago": "Chicago",
+
+      "retainerDate": "Retainer Date"
+    },
+
+    "notificationModal": {
+      "title": "Send Individual Notification",
+      "subject": "Add Subject",
+      "placeholder": "Add Text"
+    }
+  },
+  
+  "patientDetails": {
+    "title": "Detalles del Paciente",
+    "issueReward": "Emitir Recompensa",
+    "sendNotification": "Enviar Notificación",
+
+    "patientInfo": {
+      "fullName": "Nombre Completo",
+      "nameValue": "John Smith",
+      "email": "Correo Electrónico",
+      "emailValue": "johnsmith@gmail.com",
+      "phone": "Número de Teléfono",
+      "phoneValue": "+1 234 567 890",
+      "status": "Estado",
+      "statusValue": "Activo",
+      "retainerDueDate": "Fecha de Vencimiento del Retenedor",
+      "retainerValue": "25 Ago 2026",
+      "lastVisit": "Última Visita",
+      "lastVisitValue": "10 Jul 2026"
+    },
+
+    "buttons": {
+      "deletePatient": "Eliminar Paciente",
+      "yes": "Sí",
+      "no": "No",
+      "save": "Guardar",
+      "addNow": "Agregar Ahora"
+    },
+
+    "appointmentHistory": {
+      "title": "Historial de Citas",
+      "newAppointments": "Nuevas Citas",
+
+      "table": {
+        "patientId": "ID del Paciente",
+        "name": "Nombre",
+        "location": "Ubicación",
+        "date": "Fecha",
+        "status": "Estado",
+        "amount": "Monto"
+      },
+
+      "data": [
+        {
+          "id": "#001",
+          "name": "John Smith",
+          "location": "Nueva York",
+          "date": "12 Jul 2026",
+          "status": "Pagado",
+          "amount": "$250"
+        },
+        {
+          "id": "#002",
+          "name": "Emily Brown",
+          "location": "Chicago",
+          "date": "15 Jul 2026",
+          "status": "Pagado",
+          "amount": "$180"
+        },
+        {
+          "id": "#003",
+          "name": "Michael Lee",
+          "location": "Los Ángeles",
+          "date": "18 Jul 2026",
+          "status": "Pagado",
+          "amount": "$300"
+        }
+      ]
+    },
+
+    "deleteModal": {
+      "title": "Eliminar Paciente",
+      "message": "¿Está seguro de que desea eliminar este paciente?"
+    },
+
+    "editModal": {
+      "title": "Editar Paciente",
+      "fullName": "Nombre Completo",
+      "fullNamePlaceholder": "Ingrese el Nombre Completo",
+      "mobileNumber": "Número de Teléfono",
+      "mobilePlaceholder": "Ingrese el Número de Teléfono",
+      "gender": "Género",
+      "selectGender": "Seleccionar Género",
+      "male": "Masculino",
+      "female": "Femenino",
+      "dateOfBirth": "Fecha de Nacimiento",
+
+      "clinicRetainer": "Retenedor de Clínica",
+      "clinicLocation": "Ubicación de la Clínica",
+      "selectClinic": "Seleccionar Clínica",
+      "newYork": "Nueva York",
+      "chicago": "Chicago",
+      "retainerDate": "Fecha del Retenedor"
+    },
+
+    "notificationModal": {
+      "title": "Enviar Notificación",
+      "subject": "Mensaje de Notificación",
+      "placeholder": "Escriba la notificación aquí..."
+    }
+  },
+
+
+  "issueReward": {
+    "title": "Emitir Recompensas",
+    "rewardsProgress": "Progreso de Recompensas",
+    "rewardItems": {
+      "oneReferral": "1 Referencia → Tarjeta de Regalo de $100",
+      "twoReferrals": "2 Referencias → Entradas para Miami Heat (temporada regular)",
+      "threeReferrals": "3 Referencias → Retenedor Gratis"
+    },
+    "rewardSummary": "02 Recompensa Emitida 01 Restante",
+    "patientCode": "Código del Paciente",
+    "referralStatus": "Seguimiento de Estado de Referencias",
+    "referralUsers": {
+      "kelvin": "Kelvin #0012",
+      "john": "John #0011",
+      "mick": "Mick #0013"
+    },
+    "statuses": {
+      "registered": "Registrado",
+      "approved": "Aprobado"
+    },
+    "issueButton": "Emitido"
+  },
+  
+  "createNotification": {
+    "title": "Crear Notificaciones",
+    "back": "Atrás",
+    "details": "Detalles de la Notificación",
+    "titleLabel": "Título",
+    "titlePlaceholder": "Ingrese el Título de la Notificación",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Ingrese el Mensaje de la Notificación",
+    "typeLabel": "Tipo",
+    "typeReminder": "Recordatorio",
+    "typeAlert": "Alerta",
+    "typeAnnouncement": "Anuncio",
+    "audienceLabel": "Audiencia Objetivo",
+    "audienceAll": "Todos los Pacientes",
+    "audienceIndividual": "Individual",
+    "scheduleLabel": "Programar (Opcional)",
+    "sendBtn": "Enviar Ahora",
+    "draftBtn": "Guardar en Borradores",
+    "previewTitle": "Vista Previa",
+    "previewToday": "Hoy",
+    "previewMessage": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor"
+  },
+  
+  "addNewTip": {
+    "title": "Agregar Nuevo Consejo",
+    "uploadImage": "Subir Imagen",
+    "titleLabel": "Título",
+    "titlePlaceholder": "Ingresar Tema",
+    "contentLabel": "Contenido",
+    "contentPlaceholder": "Tipos de Pago",
+    "publishButton": "Publicar"
+  },
+
+  "tipDetail": {
+    "title": "lorem Ipsum......",
+    "imageAlt": "Imagen del Consejo",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestiae, consequatur temporibus. Laborum pariatur reprehenderit officiis impedit. Consequatur molestias fugiat saepe.",
+    "actions": {
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "deleteModal": {
+      "title": "Eliminar Consejo",
+      "message": "¿Estás seguro de que quieres eliminar este consejo?",
+      "cancel": "No",
+      "confirm": "Sí",
+      "close": "Cerrar"
+    }
+  },
+  
+  "editTip": {
+    "title": "Editar Consejo",
+    "imageLabel": "Imagen del Consejo",
+    "titleLabel": "Título",
+    "titlePlaceholder": "Ingrese el título del consejo",
+    "contentLabel": "Contenido",
+    "contentPlaceholder": "Agregue contenido aquí...",
+    "saveButton": "Guardar",
+    "cancelButton": "Cancelar"
+  },
+   "sidebar": {
+    "dashboard": "Panel",
+    "patients": "Pacientes",
+    "notifications": "Notificaciones",
+    "appointments": "Citas",
+    "payments": "Pagos",
+    "messages": "Mensajes",
+    "reports": "Informes",
+    "referrals": "Referencias",
+    "content": "Contenido",
+    "logout": "Cerrar Sesión",
+    "logoutTitle": "Cerrar Sesión",
+    "logoutMessage": "¿Estás seguro de que quieres cerrar tu sesión?",
+    "no": "No",
+    "yes": "Sí"
+  }
+
+
+}
+  
+
+

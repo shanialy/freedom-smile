@@ -2,6 +2,8 @@ import "./Dashboard.css";
 import "./Referrals.css";
 import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+import { useTranslation } from "react-i18next";
 
 import {
   FaThLarge,
@@ -18,74 +20,25 @@ import {
 } from "react-icons/fa";
 
 function Referrals() {
- const referrals = [
-  {
-    referrer: "John Smith",
-    referredPatient: "Milly Johnson",
-    date: "May 5, 2026",
-    status: "Converted",
-    reward: "$100",
-    action: "Completed",
-  },
-  {
-    referrer: "Sarah Wilson",
-    referredPatient: "David Brown",
-    date: "May 8, 2026",
-    status: "Converted",
-    reward: "$75",
-    action: "Completed",
-  },
-  {
-    referrer: "Michael Clark",
-    referredPatient: "Emma Davis",
-    date: "May 10, 2026",
-    status: "Converted",
-    reward: "$120",
-    action: "Completed",
-  },
-  {
-    referrer: "Olivia Taylor",
-    referredPatient: "James Wilson",
-    date: "May 12, 2026",
-    status: "Converted",
-    reward: "$90",
-    action: "Completed",
-  },
-  {
-    referrer: "Daniel Lee",
-    referredPatient: "Sophia Martin",
-    date: "May 15, 2026",
-    status: "Converted",
-    reward: "$80",
-    action: "Completed",
-  },
-];
+  const { t } = useTranslation();
+
+  const referrals = t("referrals.data", {
+    returnObjects: true,
+  });
+
+
 
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
-     <Sidebar />
+      <Sidebar />
 
       {/* Main */}
       <main className="main-content">
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
-
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+        <Navbar />
 
         <h2 className="payment-title">
-          Referrals
+          {t("referrals.title")}
         </h2>
 
         {/* Cards */}
@@ -93,17 +46,19 @@ function Referrals() {
         <div className="payment-cards">
           <div className="payment-card">
             <h3>$5,235</h3>
-            <p>Total Revenue</p>
+            
+              <p>{t("referrals.cards.totalRevenue")}</p>
+           
           </div>
 
           <div className="payment-card">
             <h3>$2,261</h3>
-            <p>Total Tax</p>
+            <p>{t("referrals.cards.totalTax")}</p>
           </div>
 
           <div className="payment-card">
             <h3>$1,542</h3>
-            <p>Total Discounts</p>
+            <p>{t("referrals.cards.totalDiscounts")}</p>
           </div>
 
           {/* <div className="payment-card">
@@ -115,62 +70,60 @@ function Referrals() {
         {/* Table */}
 
         <div className="payment-table-box">
-          <h4>Referrals List</h4>
+          <h4>{t("referrals.table.title")}</h4>
 
           <table className="payment-table">
             <thead>
               <tr>
-                <th>Referrer</th>
-                <th>Referrerd Patient</th>
-                <th>Date</th>
+                <th>{t("referrals.table.headers.referrer")}</th>
+                <th>{t("referrals.table.headers.referredPatient")}</th>
+                <th>{t("referrals.table.headers.date")}</th>
                 <th></th>
-                <th>Status</th>
+                <th>{t("referrals.table.headers.status")}</th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <th>Reward</th>
+                <th>{t("referrals.table.headers.reward")}</th>
                 <th></th>
-                <th>Action</th>
+                <th>{t("referrals.table.headers.action")}</th>
               </tr>
             </thead>
-<tbody>
-  {referrals.map((item, index) => (
-    <tr key={index}>
-      <td>{item.referrer}</td>
-      <td>{item.referredPatient}</td>
-      <td>{item.date}</td>
-      <td></td>
+            <tbody>
+              {referrals.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.referrer}</td>
+                  <td>{item.referredPatient}</td>
+                  <td>{item.date}</td>
+                  <td></td>
 
-      <td>
-        <span
-          className={
-            item.status === "Converted"
-              ? "paid-badge"
-              : "pending-badge"
-          }
-        >
-          {item.status}
-        </span>
-      </td>
+                  <td>
+                    <span
+                      className={
+                        item.status === t("referrals.status.converted")
+                          ? "paid-badge"
+                          : "pending-badge"
+                      }
+                    >
+                      {item.status}
+                    </span>
+                  </td>
 
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>{item.reward}</td>
-      <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>{item.reward}</td>
+                  <td></td>
 
-      <td>
-         <b> {item.action} </b>
-      </td>
-    </tr>
-  ))}
-</tbody>
+                  <td>
+                    <b> {item.action} </b>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
 
         {/* Revenue Chart */}
-
-        
       </main>
     </div>
   );

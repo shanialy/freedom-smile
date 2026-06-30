@@ -6,6 +6,8 @@ import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 import {
   FaUserInjured,
@@ -24,85 +26,17 @@ import {
 } from "react-icons/fa";
 
 function PatientManagement() {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
-  // const [showVisitModal, setShowVisitModal] = useState(false);
+
   const [showVisitModal, setShowVisitModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showAddPatientModal, setShowAddPatientModal] = useState(false);
-  const patients = [
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-    {
-      name: "John Smith",
-      contact: "+1234567890",
-      location: "New York, NY",
-      status: "Active",
-      dueTime: "11 Months",
-      lastVisit: "March, 16 2026",
-    },
-  ];
+
+  const patients = t("patientManagement.patients", {
+  returnObjects: true,
+});
 
   return (
     <div
@@ -118,46 +52,32 @@ function PatientManagement() {
       {/* Main Content */}
       <main className="main-content">
         {/* Navbar */}
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
-
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+        <Navbar />
 
         {/* Header */}
-       <div className="patient-header-row">
-  <h2 className="patient-title">Patients Management</h2>
+        <div className="patient-header-row">
+          <h2 className="patient-title">{t("patientManagement.title")}</h2>
 
-  <button
-    className="patient-btn"
-    onClick={() => setShowAddPatientModal(true)}
-  >
-    Add Patient
-  </button>
-</div>
+          <button
+            className="patient-btn"
+            onClick={() => setShowAddPatientModal(true)}
+          >
+            {t("patientManagement.buttons.addPatient")}
+          </button>
+        </div>
 
         {/* Table */}
         <div className="patient-table-wrapper">
           <table className="patient-table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Contact</th>
-                <th>Clinic Location</th>
-                <th>Status</th>
-                <th>Retainer Due Time</th>
-                <th>Last Visit</th>
-                <th>Actions</th>
+                <th>{t("patientManagement.table.headers.name")}</th>
+                <th>{t("patientManagement.table.headers.contact")}</th>
+                <th>{t("patientManagement.table.headers.clinicLocation")}</th>
+                <th>{t("patientManagement.table.headers.status")}</th>
+                <th>{t("patientManagement.table.headers.retainerDueTime")}</th>
+                <th>{t("patientManagement.table.headers.lastVisit")}</th>
+                <th>{t("patientManagement.table.headers.actions")}</th>
               </tr>
             </thead>
 
@@ -173,8 +93,10 @@ function PatientManagement() {
                   <td>{patient.location}</td>
                   <td>{patient.status}</td>
                   <td>{patient.dueTime}</td>
+
                   <td>
-                    {patient.lastVisit}{" "}
+                    {patient.lastVisit}
+
                     <FaEdit
                       className="edit-icon"
                       onClick={(e) => {
@@ -186,7 +108,6 @@ function PatientManagement() {
 
                   <td>
                     <div className="actions">
-                      {/* <FaEye className="view-icon" /> */}
                       <FaEdit
                         className="edit-icon"
                         onClick={(e) => {
@@ -194,6 +115,7 @@ function PatientManagement() {
                           setShowVisitModal(true);
                         }}
                       />
+
                       <FaTrash
                         className="delete-icon"
                         onClick={(e) => {
@@ -221,15 +143,18 @@ function PatientManagement() {
                 <FaTimes />
               </button>
 
-              <h3>Update Last Visit</h3>
+              <h3>{t("patientManagement.visitModal.title")}</h3>
 
               <form>
-                <label>Update Date</label>
+                <label>{t("patientManagement.visitModal.label")}</label>
 
-                <input type="date" placeholder="Enter Date" />
+                <input
+                  type="date"
+                  placeholder={t("patientManagement.visitModal.placeholder")}
+                />
 
                 <button type="submit" className="visit-update-btn">
-                  Update Now
+                  {t("patientManagement.buttons.updateNow")}
                 </button>
               </form>
             </div>
@@ -253,19 +178,21 @@ function PatientManagement() {
                 <FaTrashAlt />
               </div>
 
-              <h3>Delete Patient</h3>
+              <h3>{t("patientManagement.deleteModal.title")}</h3>
 
-              <p>Are you sure you want to delete this patient?</p>
+              <p>{t("patientManagement.deleteModal.message")}</p>
 
               <div className="delete-actions">
                 <button
                   className="delete-cancel-btn"
                   onClick={() => setShowDeleteModal(false)}
                 >
-                  No
+                  {t("patientManagement.buttons.no")}
                 </button>
 
-                <button className="delete-confirm-btn">Yes</button>
+                <button className="delete-confirm-btn">
+                  {t("patientManagement.buttons.yes")}
+                </button>
               </div>
             </div>
           </div>
@@ -283,39 +210,79 @@ function PatientManagement() {
                 <FaTimes />
               </button>
 
-              <h3>Add New Patient</h3>
+              <h3>{t("patientManagement.addModal.title")}</h3>
 
               <form className="pm-add-form">
-                <label>Full Name</label>
-                <input type="text" placeholder="Patient Full Name" />
+                <label>{t("patientManagement.addModal.fields.fullName")}</label>
 
-                <label>Mobile Number</label>
-                <input type="text" placeholder="+1 123 456 7890" />
+                <input
+                  type="text"
+                  placeholder={t(
+                    "patientManagement.addModal.placeholders.fullName",
+                  )}
+                />
 
-                <label>Gender</label>
+                <label>
+                  {t("patientManagement.addModal.fields.mobileNumber")}
+                </label>
+
+                <input
+                  type="text"
+                  placeholder={t(
+                    "patientManagement.addModal.placeholders.mobileNumber",
+                  )}
+                />
+
+                <label>{t("patientManagement.addModal.fields.gender")}</label>
+
                 <select>
-                  <option>Select Gender</option>
-                  <option>Male</option>
-                  <option>Female</option>
+                  <option>
+                    {t("patientManagement.addModal.options.selectGender")}
+                  </option>
+
+                  <option>
+                    {t("patientManagement.addModal.options.male")}
+                  </option>
+
+                  <option>
+                    {t("patientManagement.addModal.options.female")}
+                  </option>
                 </select>
 
-                <label>Date Of Birth</label>
+                <label>
+                  {t("patientManagement.addModal.fields.dateOfBirth")}
+                </label>
+
                 <input type="date" />
 
-                <h4>Clinic & Retainer Details</h4>
+                <h4>{t("patientManagement.addModal.fields.clinicDetails")}</h4>
 
-                <label>Clinic Location</label>
+                <label>
+                  {t("patientManagement.addModal.fields.clinicLocation")}
+                </label>
+
                 <select>
-                  <option>Select Clinic Location</option>
-                  <option>New York</option>
-                  <option>California</option>
+                  <option>
+                    {t("patientManagement.addModal.options.selectClinic")}
+                  </option>
+
+                  <option>
+                    {t("patientManagement.addModal.options.newYork")}
+                  </option>
+
+                  <option>
+                    {t("patientManagement.addModal.options.california")}
+                  </option>
                 </select>
 
-                <label>Retainer Date</label>
+                <label>
+                  {t("patientManagement.addModal.fields.retainerDate")}
+                </label>
+
                 <input type="date" />
 
                 <button type="submit" className="pm-add-btn">
-                  Add Now
+                  {t("patientManagement.buttons.addNow")}
                 </button>
               </form>
             </div>

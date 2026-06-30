@@ -5,6 +5,8 @@ import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 import {
   FaThLarge,
@@ -25,109 +27,92 @@ import { FaTrash } from "react-icons/fa";
 
 function TipDetail() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  
   return (
     <div className="dashboard-container">
       <Sidebar />
 
       <main className="main-content">
 
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
-
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+       <Navbar />
 
         <div className="tip-detail-container">
 
           <h3 className="tip-detail-title">
-            lorem Ipsum......
+            {t('tipDetail.title')}
           </h3>
 
           <div className="tip-image-box">
-            <FaImage />
+            <FaImage alt={t('tipDetail.imageAlt')} />
           </div>
 
           <p className="tip-detail-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Blanditiis molestiae, consequatur temporibus.
-            Laborum pariatur reprehenderit officiis impedit.
-            Consequatur molestias fugiat saepe.
+            {t('tipDetail.description')}
           </p>
 
           <div className="tip-actions">
             <button
-  className="edit-btn"
-  onClick={() => navigate("/edit-tip")}
->
-  Edit
-</button>
+              className="edit-btn"
+              onClick={() => navigate("/edit-tip")}
+            >
+              {t('tipDetail.actions.edit')}
+            </button>
 
             <button
-  className="delete-btn"
-  onClick={() => setShowDeleteModal(true)}
->
-  Delete
-</button>
+              className="delete-btn"
+              onClick={() => setShowDeleteModal(true)}
+            >
+              {t('tipDetail.actions.delete')}
+            </button>
           </div>
 
         </div>
 
-{showDeleteModal &&
-  createPortal(
-    <div className="delete-modal-overlay">
-      <div className="delete-modal">
+        {showDeleteModal &&
+          createPortal(
+            <div className="delete-modal-overlay">
+              <div className="delete-modal">
 
-        <button
-          className="modal-close-btn"
-          onClick={() => setShowDeleteModal(false)}
-        >
-          <FaTimes />
-        </button>
+                <button
+                  className="modal-close-btn"
+                  onClick={() => setShowDeleteModal(false)}
+                  aria-label={t('tipDetail.deleteModal.close')}
+                >
+                  <FaTimes />
+                </button>
 
-        <div className="delete-icon-circle">
-          <FaTrash />
-        </div>
+                <div className="delete-icon-circle">
+                  <FaTrash />
+                </div>
 
-        <h3 className="delete-modal-title">
-          Delete Tip
-        </h3>
+                <h3 className="delete-modal-title">
+                  {t('tipDetail.deleteModal.title')}
+                </h3>
 
-        <p className="delete-modal-text">
-          Are you sure you want to delete this tip?
-        </p>
+                <p className="delete-modal-text">
+                  {t('tipDetail.deleteModal.message')}
+                </p>
 
-        <div className="delete-modal-buttons">
-          <button
-            className="cancel-btn"
-            onClick={() => setShowDeleteModal(false)}
-          >
-            No
-          </button>
+                <div className="delete-modal-buttons">
+                  <button
+                    className="cancel-btn"
+                    onClick={() => setShowDeleteModal(false)}
+                  >
+                    {t('tipDetail.deleteModal.cancel')}
+                  </button>
 
-          <button className="confirm-btn">
-            Yes
-          </button>
-        </div>
+                  <button className="confirm-btn">
+                    {t('tipDetail.deleteModal.confirm')}
+                  </button>
+                </div>
 
-      </div>
-    </div>,
-    document.body
-  )
-}
+              </div>
+            </div>,
+            document.body
+          )
+        }
 
       </main>
     </div>

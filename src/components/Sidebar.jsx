@@ -5,6 +5,7 @@ import logo from "../assets/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 import {
   FaThLarge,
@@ -20,13 +21,15 @@ import {
 } from "react-icons/fa";
 
 function Sidebar() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
-const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
-const handleLogout = () => {
-  setShowLogoutModal(false);
-  navigate("/");
-};
+  const handleLogout = () => {
+    setShowLogoutModal(false);
+    navigate("/");
+  };
+
   return (
     
     <aside className="sidebar">
@@ -41,105 +44,104 @@ const handleLogout = () => {
       <ul className="menu">
         <li>
           <NavLink to="/Dashboard">
-            <FaThLarge /> Dashboard
+            <FaThLarge /> {t('sidebar.dashboard')}
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/PatientManagement">
-            <FaUserInjured /> Patients
+            <FaUserInjured /> {t('sidebar.patients')}
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/Notification">
-            <FaBell /> Notifications
+            <FaBell /> {t('sidebar.notifications')}
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/Appointment">
-            <FaCalendarAlt /> Appointments
+            <FaCalendarAlt /> {t('sidebar.appointments')}
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/Payment">
-            <FaMoneyBillWave /> Payments
+            <FaMoneyBillWave /> {t('sidebar.payments')}
           </NavLink>
         </li>
 
         <li>
-  <NavLink to="/Messages">
-    <FaComments /> Messages
-  </NavLink>
-</li>
+          <NavLink to="/Messages">
+            <FaComments /> {t('sidebar.messages')}
+          </NavLink>
+        </li>
 
         <li>
           <NavLink to="/Reports">
-            <FaChartBar /> Reports
+            <FaChartBar /> {t('sidebar.reports')}
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/Referrals">
-            <FaUserFriends /> Referrals
+            <FaUserFriends /> {t('sidebar.referrals')}
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/ContentManagement">
-            <FaFileAlt /> Content
+            <FaFileAlt /> {t('sidebar.content')}
           </NavLink>
         </li>
       </ul>
 
-
-<button
-  className="logout-btn"
-  onClick={() => setShowLogoutModal(true)}
->
-  <FaSignOutAlt /> Logout
-</button>
-
-{showLogoutModal && (
-  <div className="logout-overlay">
-    <div className="logout-popup">
-
       <button
-        className="logout-close"
-        onClick={() => setShowLogoutModal(false)}
+        className="logout-btn"
+        onClick={() => setShowLogoutModal(true)}
       >
-        <FaTimes />
+        <FaSignOutAlt /> {t('sidebar.logout')}
       </button>
 
-      <div className="logout-icon">
-        <FaSignOutAlt />
-      </div>
+      {showLogoutModal && (
+        <div className="logout-overlay">
+          <div className="logout-popup">
 
-      <h3>Logout</h3>
+            <button
+              className="logout-close"
+              onClick={() => setShowLogoutModal(false)}
+            >
+              <FaTimes />
+            </button>
 
-      <p>Are you sure you want to logout your account?</p>
+            <div className="logout-icon">
+              <FaSignOutAlt />
+            </div>
 
-      <div className="logout-actions">
-        <button
-          className="logout-no"
-          onClick={() => setShowLogoutModal(false)}
-        >
-          No
-        </button>
+            <h3>{t('sidebar.logoutTitle')}</h3>
 
-        <button
-          className="logout-yes"
-          onClick={handleLogout}
-        >
-          Yes
-        </button>
-      </div>
+            <p>{t('sidebar.logoutMessage')}</p>
 
-    </div>
-  </div>
-)}
+            <div className="logout-actions">
+              <button
+                className="logout-no"
+                onClick={() => setShowLogoutModal(false)}
+              >
+                {t('sidebar.no')}
+              </button>
+
+              <button
+                className="logout-yes"
+                onClick={handleLogout}
+              >
+                {t('sidebar.yes')}
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
 
     </aside>
   );

@@ -1,6 +1,8 @@
 import "./Dashboard.css";
 import "./IssueReward.css";
 import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+import { useTranslation } from "react-i18next";
 
 import {
   FaSearch,
@@ -13,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 function IssueReward() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="dashboard-container patient-details-page">
@@ -20,21 +23,7 @@ function IssueReward() {
 
       <main className="main-content">
         {/* Navbar */}
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search . . ." />
-          </div>
-
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+        <Navbar />
 
         {/* Header */}
         <div className="details-header">
@@ -44,7 +33,7 @@ function IssueReward() {
               onClick={() => navigate("/patient-details")}
             />
 
-            <h2>Issue Rewards</h2>
+            <h2>{t('issueReward.title')}</h2>
           </div>
         </div>
 
@@ -53,14 +42,14 @@ function IssueReward() {
 
   <div className="reward-card">
     <div className="reward-progress">
-      <h4>Rewards Progress</h4>
+      <h4>{t('issueReward.rewardsProgress')}</h4>
 
-      <div className="reward-item">✔ 1 Referral → $100 Gift Card</div>
-      <div className="reward-item">✔ 2 Referrals → Miami Heat tickets (regular season)</div>
-      <div className="reward-item">○ 3 Referrals → Free Retainer</div>
+      <div className="reward-item">✔ {t('issueReward.rewardItems.oneReferral')}</div>
+      <div className="reward-item">✔ {t('issueReward.rewardItems.twoReferrals')}</div>
+      <div className="reward-item">○ {t('issueReward.rewardItems.threeReferrals')}</div>
 
       <p className="reward-summary">
-        02 Reward Issued 01 Remaining
+        {t('issueReward.rewardSummary')}
       </p>
     </div>
 
@@ -70,7 +59,7 @@ function IssueReward() {
   </div>
 
   <div className="patient-code-section">
-    <label>Patient Code</label>
+    <label>{t('issueReward.patientCode')}</label>
 
     <div className="patient-code-box">
       <span>#494944</span>
@@ -79,7 +68,7 @@ function IssueReward() {
   </div>
 
   <div className="referral-section">
-    <label>Referral Status Tracker</label>
+    <label>{t('issueReward.referralStatus')}</label>
 
     <div className="referral-users">
 
@@ -87,8 +76,8 @@ function IssueReward() {
         <div className="user-icon">
           <FaUserCircle />
         </div>
-        <span>Kelvin #0012</span>
-        <small>Registered</small>
+        <span>{t('issueReward.referralUsers.kelvin')}</span>
+        <small>{t('issueReward.statuses.registered')}</small>
       </div>
 
       <div className="referral-user">
@@ -96,8 +85,8 @@ function IssueReward() {
           <FaUserCircle />
           <span className="check-badge">✓</span>
         </div>
-        <span>John #0011</span>
-        <small>Approved</small>
+        <span>{t('issueReward.referralUsers.john')}</span>
+        <small>{t('issueReward.statuses.approved')}</small>
       </div>
 
       <div className="referral-user">
@@ -105,15 +94,15 @@ function IssueReward() {
           <FaUserCircle />
           <span className="check-badge">✓</span>
         </div>
-        <span>Mick #0013</span>
-        <small>Approved</small>
+        <span>{t('issueReward.referralUsers.mick')}</span>
+        <small>{t('issueReward.statuses.approved')}</small>
       </div>
 
     </div>
   </div>
 
   <button className="issue-btn">
-    Issued
+    {t('issueReward.issueButton')}
   </button>
 
 </div>

@@ -4,89 +4,25 @@ import "./Notification.css";
 import Sidebar from "../components/Sidebar";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 function Notification() {
   const [activeTab, setActiveTab] = useState("sent");
-const navigate = useNavigate();
-  const sentNotifications = [
-    {
-      title: "Retainer Replacement Reminder",
-      desc: "Your retainer is due for replacement...",
-      target: "All Patient",
-      date: "2026-09-01",
-      action: "Reminder",
-    },
-    {
-      title: "Payment Reminder",
-      desc: "Your payment is due...",
-      target: "Individual",
-      date: "2026-09-02",
-      action: "Alert",
-    },
-    {
-      title: "Appointment Reminder",
-      desc: "Upcoming appointment scheduled...",
-      target: "All Patient",
-      date: "2026-09-03",
-      action: "Reminder",
-    },
-    {
-      title: "New Offer",
-      desc: "Special dental care discount...",
-      target: "All Patient",
-      date: "2026-09-04",
-      action: "Offer",
-    },
-    {
-      title: "Follow-up Reminder",
-      desc: "Please schedule your follow-up...",
-      target: "Individual",
-      date: "2026-09-05",
-      action: "Alert",
-    },
-    {
-      title: "Treatment Update",
-      desc: "Your treatment plan updated...",
-      target: "All Patient",
-      date: "2026-09-06",
-      action: "Info",
-    },
-    {
-      title: "Clinic Announcement",
-      desc: "Clinic timings updated...",
-      target: "All Patient",
-      date: "2026-09-07",
-      action: "Notice",
-    },
-  ];
+  const navigate = useNavigate();
+ const { t } = useTranslation();
 
-  const scheduledNotifications = [
-    {
-      title: "Scheduled Appointment Reminder",
-      desc: "Will be sent tomorrow...",
-      target: "All Patient",
-      date: "2026-09-10",
-      action: "Scheduled",
-    },
-    {
-      title: "Scheduled Payment Alert",
-      desc: "Will be sent next week...",
-      target: "Individual",
-      date: "2026-09-15",
-      action: "Scheduled",
-    },
-  ];
+const sentNotifications = t("notification.sent", {
+  returnObjects: true,
+});
 
-  const draftNotifications = [
-    {
-      title: "Draft Notification",
-      desc: "This notification is saved as draft...",
-      target: "All Patient",
-      date: "2026-09-20",
-      action: "Draft",
-    },
-  ];
+const scheduledNotifications = t("notification.scheduled", {
+  returnObjects: true,
+});
 
+const draftNotifications = t("notification.draft", {
+  returnObjects: true,
+});
   const getNotifications = () => {
     if (activeTab === "sent") return sentNotifications;
     if (activeTab === "scheduled") return scheduledNotifications;
@@ -94,90 +30,75 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="dashboard-container">
-      <Sidebar />
+  <div className="dashboard-container">
+    <Sidebar />
 
-      <main className="main-content">
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
+    <main className="main-content">
+      <Navbar />
 
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
+      <div className="notification-header">
+        <h2>{t("notification.title")}</h2>
 
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+        <button
+          className="create-btn"
+          onClick={() => navigate("/create-notification")}
+        >
+          {t("notification.buttons.create")}
+        </button>
+      </div>
 
-        <div className="notification-header">
-          <h2>Notifications</h2>
+      <div className="notification-tabs">
+        <button
+          className={`tab ${activeTab === "sent" ? "active-tab" : ""}`}
+          onClick={() => setActiveTab("sent")}
+        >
+          {t("notification.tabs.sent")}
+        </button>
 
-          <button
-  className="create-btn"
-  onClick={() => navigate("/create-notification")}
->
-  Create Notifications
-</button>
-        </div>
+        <button
+          className={`tab ${activeTab === "scheduled" ? "active-tab" : ""}`}
+          onClick={() => setActiveTab("scheduled")}
+        >
+          {t("notification.tabs.scheduled")}
+        </button>
 
-        <div className="notification-tabs">
-          <button
-            className={`tab ${
-              activeTab === "sent" ? "active-tab" : ""
-            }`}
-            onClick={() => setActiveTab("sent")}
-          >
-            Sent
-          </button>
+        <button
+          className={`tab ${activeTab === "draft" ? "active-tab" : ""}`}
+          onClick={() => setActiveTab("draft")}
+        >
+          {t("notification.tabs.draft")}
+        </button>
+      </div>
 
-          <button
-            className={`tab ${
-              activeTab === "scheduled" ? "active-tab" : ""
-            }`}
-            onClick={() => setActiveTab("scheduled")}
-          >
-            Scheduled
-          </button>
-
-          <button
-            className={`tab ${
-              activeTab === "draft" ? "active-tab" : ""
-            }`}
-            onClick={() => setActiveTab("draft")}
-          >
-            Draft
-          </button>
-        </div>
-
-        <div className="notification-grid">
-          {getNotifications().map((item, index) => (
-            <div className="notification-card" key={index}>
-              <div className="card-top">
-                <div>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
-                </div>
-
-                <button className="action-btn">
-                  {item.action}
-                </button>
+      <div className="notification-grid">
+        {getNotifications().map((item, index) => (
+          <div className="notification-card" key={index}>
+            <div className="card-top">
+              <div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
               </div>
 
-              <div className="card-footer">
-                <span>Target: {item.target}</span>
-                <span>Date: {item.date}</span>
-              </div>
+              <button className="action-btn">
+                {item.action}
+              </button>
             </div>
-          ))}
-        </div>
-      </main>
-    </div>
-  );
+
+            <div className="card-footer">
+              <span>
+                {t("notification.labels.target")}: {item.target}
+              </span>
+
+              <span>
+                {t("notification.labels.date")}: {item.date}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+  </div>
+);
 }
 
 export default Notification;

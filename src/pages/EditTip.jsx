@@ -1,6 +1,8 @@
 import "./Dashboard.css";
 import "./EditTip.css";
 import Sidebar from "../components/Sidebar";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 import {
   FaSearch,
@@ -8,29 +10,17 @@ import {
 } from "react-icons/fa";
 
 function EditTip() {
+  const { t } = useTranslation();
+
   return (
     <div className="dashboard-container">
       <Sidebar />
 
       <main className="main-content">
 
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
+        <Navbar />
 
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
-
-        <h2 className="edit-tip-title">Edit Tip</h2>
+        <h2 className="edit-tip-title">{t('editTip.title')}</h2>
 
         <div className="edit-tip-card">
 
@@ -39,25 +29,25 @@ function EditTip() {
           </div>
 
           <div className="edit-tip-field">
-            <label>Title</label>
+            <label>{t('editTip.titleLabel')}</label>
 
             <input
               type="text"
-              placeholder="Edit Tip"
+              placeholder={t('editTip.titlePlaceholder')}
             />
           </div>
 
           <div className="edit-tip-field">
-            <label>Content</label>
+            <label>{t('editTip.contentLabel')}</label>
 
             <textarea
               rows="7"
-              placeholder="Add Content"
+              placeholder={t('editTip.contentPlaceholder')}
             ></textarea>
           </div>
 
           <button className="save-tip-btn">
-            Save
+            {t('editTip.saveButton')}
           </button>
 
         </div>

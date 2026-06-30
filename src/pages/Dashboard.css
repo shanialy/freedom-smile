@@ -1052,3 +1052,52 @@ th,td{
     margin-top: 12px !important;
   }
 }
+
+.navbar-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.language-dropdown{
+    position:relative;
+}
+
+.language-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    color:#444;
+    min-width:150px;
+    justify-content:space-between;
+}
+
+.language-menu{
+    position:absolute;
+    top:110%;
+    right:0;
+    width:150px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    z-index:1000;
+}
+
+.language-menu div{
+    padding:12px 15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.language-menu div:hover{
+    background:#f4f6ff;
+    color:#4F46E5;
+}

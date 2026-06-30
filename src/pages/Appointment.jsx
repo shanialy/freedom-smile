@@ -2,6 +2,9 @@ import "./Dashboard.css";
 import "./Appointment.css";
 import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
+import React from "react";
 
 import {
   FaThLarge,
@@ -18,103 +21,52 @@ import {
 } from "react-icons/fa";
 
 function Appointment() {
-  const appointments = [
-    {
-      time: "08:00 AM",
-      name: "Sarah Johnsons",
-      type: "Check-up",
-      duration: "30 min",
-    },
-    {
-      time: "08:00 AM",
-      name: "Sarah Johnsons",
-      type: "Check-up",
-      duration: "30 min",
-    },
-    {
-      time: "09:00 AM",
-      name: "Sarah Johnsons",
-      type: "Check-up",
-      duration: "30 min",
-    },
-    {
-      time: "09:00 AM",
-      name: "Sarah Johnsons",
-      type: "Check-up",
-      duration: "30 min",
-    },
-    {
-      time: "10:00 AM",
-      name: "Sarah Johnsons",
-      type: "Check-up",
-      duration: "30 min",
-    },
-    {
-      time: "10:00 AM",
-      name: "Sarah Johnsons",
-      type: "Check-up",
-      duration: "30 min",
-    },
-  ];
+  const { t } = useTranslation();
+
+  const appointments = t("appointment.data", {
+    returnObjects: true,
+  });
 
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
-     <Sidebar />
+      <Sidebar />
 
       {/* Main Content */}
       <main className="main-content">
         {/* Navbar */}
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
-
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+        <Navbar />
 
         <div className="appointment-page">
-          <h2 className="appointment-title">
-            Appointments
-          </h2>
+          <h2 className="appointment-title">{t("appointment.title")}</h2>
 
           <div className="appointment-card">
-            <div className="appointment-date">
-              This Week April 26 - May 2, 2026
-            </div>
+            <div className="appointment-date">{t("appointment.week")}</div>
+
             <hr />
 
-            {appointments.map((item, index) => (
-  <>
-    <div className="appointment-row" key={index}>
-      <div className="appointment-time">
-        {item.time}
-      </div>
+            {Array.isArray(appointments) &&
+              appointments.map((item, index) => (
+                <React.Fragment key={index}>
+                  <div className="appointment-row">
+                    <div className="appointment-time">{item.time}</div>
 
-      <div className="appointment-info">
-        <h4>{item.name}</h4>
-        <p>{item.type}</p>
-        <span>{item.duration}</span>
-      </div>
+                    <div className="appointment-info">
+                      <h4>{item.name}</h4>
+                      <p>{item.type}</p>
+                      <span>{item.duration}</span>
+                    </div>
 
-      <button className="schedule-btn">
-        Schedule
-      </button>
-    </div>
+                    <button className="schedule-btn">
+                      {t("appointment.schedule")}
+                    </button>
+                  </div>
 
-    <hr className="appointment-line" />
-  </>
-))}
-            
-            {/* <hr /> */}
+                  {index !== appointments.length - 1 && (
+                    <hr className="appointment-line" />
+                  )}
+                </React.Fragment>
+              ))}
           </div>
         </div>
       </main>

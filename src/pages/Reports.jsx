@@ -2,6 +2,8 @@ import "./Dashboard.css";
 import "./Reports.css";
 import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 import {
   FaThLarge,
@@ -18,6 +20,7 @@ import {
 } from "react-icons/fa";
 
 function Reports() {
+  const { t } = useTranslation();
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
@@ -26,60 +29,38 @@ function Reports() {
       {/* Main Content */}
       <main className="main-content">
         {/* Navbar */}
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
+        <Navbar />
 
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
-
-        <h2 className="report-title">
-          Report Management
-        </h2>
+        <h2 className="report-title">{t("reports.title")}</h2>
 
         <div className="report-card">
           <div className="report-form">
             <div className="report-field">
-              <label>Report Type</label>
+              <label>{t("reports.fields.reportType")}</label>
 
               <select>
-                <option>Revenue Report</option>
-                <option>Patient Report</option>
-                <option>Appointment Report</option>
+                <option>{t("reports.reportTypes.revenue")}</option>
+
+                <option>{t("reports.reportTypes.patient")}</option>
+
+                <option>{t("reports.reportTypes.appointment")}</option>
               </select>
             </div>
 
             <div className="report-field">
-              <label>Start Date</label>
+              <label>{t("reports.fields.startDate")}</label>
 
-              <input
-                type="text"
-                placeholder="11/01/2026"
-              />
+              <input type="text" placeholder={t("reports.placeholders.startDate")} />
             </div>
 
             <div className="report-field">
-              <label>End Date</label>
+              <label>{t("reports.fields.endDate")}</label>
 
-              <input
-                type="text"
-                placeholder="11/08/2026"
-              />
+              <input type="text" placeholder={t("reports.placeholders.endDate")} />
             </div>
           </div>
 
-          <button className="export-btn">
-            Export File
-          </button>
+          <button className="export-btn">{t("reports.buttons.export")}</button>
         </div>
       </main>
     </div>

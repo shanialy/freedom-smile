@@ -2,6 +2,8 @@ import "./Dashboard.css";
 import "./Payment.css";
 import logo from "../assets/logo.png";
 import Sidebar from "../components/Sidebar";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 import {
   FaThLarge,
@@ -18,36 +20,11 @@ import {
 } from "react-icons/fa";
 
 function Payment() {
-  const payments = [
-    {
-      id: "EYT001",
-      name: "John Smith",
-      location: "New York",
-      date: "May, 5 2026",
-      amount: "$25.69",
-    },
-    {
-      id: "EYT001",
-      name: "John Smith",
-      location: "New York",
-      date: "May, 5 2026",
-      amount: "$25.69",
-    },
-    {
-      id: "EYT001",
-      name: "John Smith",
-      location: "New York",
-      date: "May, 5 2026",
-      amount: "$25.69",
-    },
-    {
-      id: "EYT001",
-      name: "John Smith",
-      location: "New York",
-      date: "May, 5 2026",
-      amount: "$25.69",
-    },
-  ];
+ const { t } = useTranslation();
+
+const payments = t("payment.payments", {
+  returnObjects: true,
+});
 
   return (
     <div className="dashboard-container">
@@ -55,24 +32,10 @@ function Payment() {
      <Sidebar />
       {/* Main */}
       <main className="main-content">
-        <div className="navbar">
-          <div className="search-box">
-            <FaSearch />
-            <input type="text" placeholder="Search..." />
-          </div>
-
-          <div className="admin-profile">
-            <div className="avatar">SM</div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-          </div>
-        </div>
+        <Navbar />
 
         <h2 className="payment-title">
-          Payments Management
+          {t("payment.title")}
         </h2>
 
         {/* Cards */}
@@ -81,22 +44,22 @@ function Payment() {
 
   <div className="payment-summary-card">
     <h3>$5,235</h3>
-    <p>Total Revenue</p>
+    <p>{t("payment.summary.totalRevenue")}</p>
   </div>
 
   <div className="payment-summary-card">
     <h3>$2,261</h3>
-    <p>Total Tax</p>
+    <p>{t("payment.summary.totalTax")}</p>
   </div>
 
   <div className="payment-summary-card">
     <h3>$1,542</h3>
-    <p>Total Discounts</p>
+    <p>{t("payment.summary.totalDiscounts")}</p>
   </div>
 
   <div className="payment-summary-card">
     <h3>$1,222</h3>
-    <p>Total Rewards</p>
+    <p>{t("payment.summary.totalRewards")}</p>
   </div>
 
 </div>
@@ -104,21 +67,21 @@ function Payment() {
         {/* Table */}
 
         <div className="payment-table-box">
-          <h4>Recent Payments</h4>
+          <h4>{t("payment.table.title")}</h4>
 
           <table className="payment-table">
             <thead>
               <tr>
-                <th>Patient ID</th>
-                <th>Name</th>
+                <th>{t("payment.table.headers.patientId")}</th>
+                <th>{t("payment.table.headers.name")}</th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <th>Location</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Amount</th>
+                <th>{t("payment.table.headers.location")}</th>
+                <th>{t("payment.table.headers.date")}</th>
+                <th>{t("payment.table.headers.status")}</th>
+                <th>{t("payment.table.headers.amount")}</th>
               </tr>
             </thead>
 
@@ -136,7 +99,7 @@ function Payment() {
 
                   <td>
                     <span className="paid-badge">
-                      Paid
+                      {t("payment.status.paid")}
                     </span>
                   </td>
 
@@ -150,7 +113,7 @@ function Payment() {
         {/* Revenue Chart */}
 
         <div className="revenue-box">
-  <h4>Revenue breakdown</h4>
+  <h4>{t("payment.chart.title")}</h4>
 
   <div className="chart-wrapper">
 

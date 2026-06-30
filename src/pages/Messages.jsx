@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import "./Messages.css";
 import Sidebar from "../components/Sidebar";
+import { useTranslation } from "react-i18next";
+import Navbar from "../components/Navbar";
 
 import {
   FaSearch,
@@ -12,113 +14,11 @@ import {
 } from "react-icons/fa";
 
 function Messages() {
-  const contacts = [
-    {
-      id: 1,
-      name: "Marvin McKinney",
-      role: "Nursing Assistant",
-      time: "5m",
-      avatar: "https://i.pravatar.cc/100?img=11",
-      unread: true,
-      messages: [
-        {
-          sender: "them",
-          text: "Hello Doctor 👋",
-          time: "09:00",
-        },
-        {
-          sender: "me",
-          text: "Hello Marvin. How are you today?",
-          time: "09:02",
-        },
-        {
-          sender: "them",
-          text: "I'm feeling much better.",
-          time: "09:03",
-        },
-      ],
-    },
+  const { t } = useTranslation();
 
-    {
-      id: 2,
-      name: "Jacob Jones",
-      role: "Healthcare Coordinator",
-      time: "3m",
-      avatar: "https://i.pravatar.cc/100?img=12",
-      unread: true,
-      messages: [
-        {
-          sender: "them",
-          text: "Can I book appointment tomorrow?",
-          time: "10:20",
-        },
-      ],
-    },
-
-    {
-      id: 3,
-      name: "Leslie Alexander",
-      role: "Web Designer",
-      time: "3m",
-      avatar: "https://i.pravatar.cc/100?img=13",
-      unread: false,
-      messages: [
-        {
-          sender: "them",
-          text: "Morning 😊",
-          time: "08:10",
-        },
-      ],
-    },
-
-    {
-      id: 4,
-      name: "Eleanor Pena",
-      role: "UI Designer",
-      time: "5m",
-      avatar: "https://i.pravatar.cc/100?img=14",
-      unread: false,
-      messages: [
-        {
-          sender: "them",
-          text: "Please review new screens.",
-          time: "11:00",
-        },
-      ],
-    },
-
-    {
-      id: 5,
-      name: "Kathryn Murphy",
-      role: "Medical Assistant",
-      time: "5m",
-      avatar: "https://i.pravatar.cc/100?img=15",
-      unread: false,
-      messages: [
-        {
-          sender: "them",
-          text: "Thank you doctor.",
-          time: "12:00",
-        },
-      ],
-    },
-
-    {
-      id: 6,
-      name: "Wade Warren",
-      role: "Web Designer",
-      time: "5m",
-      avatar: "https://i.pravatar.cc/100?img=16",
-      unread: false,
-      messages: [
-        {
-          sender: "them",
-          text: "Meeting at 5?",
-          time: "04:00",
-        },
-      ],
-    },
-  ];
+const contacts = t("messages.contacts", {
+  returnObjects: true,
+});
 
   const [selectedChat, setSelectedChat] = useState(contacts[0]);
   const [message, setMessage] = useState("");
@@ -129,7 +29,7 @@ function Messages() {
     const newMsg = {
       sender: "me",
       text: message,
-      time: "Now",
+      time: t("messages.now"),
     };
 
     setSelectedChat({
@@ -148,30 +48,7 @@ function Messages() {
 
         {/* Navbar */}
 
-        <div className="navbar">
-
-          <div className="search-box">
-            <FaSearch />
-            <input
-              type="text"
-              placeholder="Search..."
-            />
-          </div>
-
-          <div className="admin-profile">
-
-            <div className="avatar">
-              SM
-            </div>
-
-            <div>
-              <h5>Super Admin</h5>
-              <p>admin@gmail.com</p>
-            </div>
-
-          </div>
-
-        </div>
+        <Navbar />
 
         {/* Main */}
 
@@ -187,7 +64,7 @@ function Messages() {
 
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder={t("messages.searchPlaceholder")}
               />
 
             </div>
@@ -225,9 +102,9 @@ function Messages() {
 
                     <small>{user.role}</small>
 
-                    <p>
-                      Lorem ipsum dolor sit amet
-                    </p>
+                    
+                      <p>{t("messages.contactPreview")}</p>
+                    
 
                   </div>
 
@@ -309,7 +186,7 @@ function Messages() {
 
               <input
                 type="text"
-                placeholder="Type a message..."
+                placeholder={t("messages.chatPlaceholder")}
                 value={message}
                 onChange={(e) =>
                   setMessage(e.target.value)
